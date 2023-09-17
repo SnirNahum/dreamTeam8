@@ -27,6 +27,9 @@
     grid-template-columns: repeat(2, 160px);
     grid-gap: 1em;
   }
+  .player-list {
+    width: 90vw;
+  }
   .players-table {
     max-width: 90vw;
   }
