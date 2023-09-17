@@ -1,0 +1,179 @@
+
+1. **chance_of_playing_next_round**: The estimated probability (as a percentage) that the player will play in the next round of matches.
+
+2. **chance_of_playing_this_round**: The estimated probability (as a percentage) that the player will play in the current round of matches.
+
+3. **code**: A unique identifier for the player.
+
+4. **cost_change_event**: The price change of the player for the upcoming match event.
+
+5. **cost_change_event_fall**: The price fall of the player for the upcoming match event.
+
+6. **cost_change_start**: The price change of the player from the beginning of the season.
+
+7. **cost_change_start_fall**: The price fall of the player from the beginning of the season.
+
+8. **dreamteam_count**: The number of times the player has been part of the Dream Team (a selection of the best-performing players) in the current season.
+
+9. **element_type**: A numerical code representing the player's position (1 for Goalkeeper, 2 for Defender, 3 for Midfielder, 4 for Forward).
+
+10. **ep_next**: The player's expected points for the next match event.
+
+11. **ep_this**: The player's expected points for the current match event.
+
+12. **event_points**: The points earned by the player in the current match event.
+
+13. **first_name**: The player's first name.
+
+14. **form**: The player's form, calculated based on their recent performances.
+
+15. **id**: A unique identifier for the player.
+
+16. **in_dreamteam**: Whether the player is currently part of the Dream Team.
+
+17. **news**: Any relevant news or updates about the player, such as injuries or suspensions.
+
+18. **news_added**: The timestamp when the news about the player was added.
+
+19. **now_cost**: The current cost of the player.
+
+20. **photo**: The filename of the player's photo.
+
+21. **points_per_game**: The average number of points the player earns per game.
+
+22. **second_name**: The player's last name.
+
+23. **selected_by_percent**: The percentage of fantasy managers who have selected the player in their teams.
+
+24. **special**: Whether the player is considered a special player (e.g., a "Double Gameweek" player).
+
+25. **squad_number**: The player's squad number (jersey number).
+
+26. **status**: The player's current status (e.g., "a" for available, "i" for injured, etc.).
+
+27. **team**: The numerical code representing the team the player is a part of.
+
+28. **team_code**: The numerical code representing the team the player is a part of.
+
+29. **total_points**: The total points the player has earned so far in the season.
+
+30. **transfers_in**: The number of times the player has been transferred into fantasy teams.
+
+31. **transfers_in_event**: The number of times the player has been transferred into fantasy teams for the upcoming match event.
+
+32. **transfers_out**: The number of times the player has been transferred out of fantasy teams.
+
+33. **transfers_out_event**: The number of times the player has been transferred out of fantasy teams for the upcoming match event.
+
+34. **value_form**: The player's value form.
+
+35. **value_season**: The player's value for the season.
+
+36. **web_name**: The player's name as it appears in URLs on the Fantasy Premier League website.
+
+37. **minutes**: The total number of minutes the player has played.
+
+38. **goals_scored**: The number of goals the player has scored.
+
+39. **assists**: The number of assists the player has provided.
+
+40. **clean_sheets**: The number of clean sheets the player's team has kept.
+
+41. **goals_conceded**: The number of goals the player's team has conceded.
+
+42. **own_goals**: The number of own goals the player has scored.
+
+43. **penalties_saved**: The number of penalties the player has saved.
+
+44. **penalties_missed**: The number of penalties the player has missed.
+
+45. **yellow_cards**: The number of yellow cards the player has received.
+
+46. **red_cards**: The number of red cards the player has received.
+
+47. **saves**: The number of saves the player (usually a goalkeeper) has made.
+
+48. **bonus**: The number of bonus points the player has earned.
+
+49. **bps**: The player's Bonus Points System score.
+
+50. **influence**: A metric indicating the player's influence on the game.
+
+51. **creativity**: A metric indicating the player's creativity on the field.
+
+52. **threat**: A metric indicating the player's threat on the field (scoring potential).
+
+53. **ict_index**: The player's ICT (Influence, Creativity, Threat) Index score.
+
+54. **starts**: The number of games the player has started.
+
+55. **expected_goals**: The player's expected goals.
+
+56. **expected_assists**: The player's expected assists.
+
+57. **expected_goal_involvements**: The player's expected goal involvements (sum of expected goals and expected assists).
+
+58. **expected_goals_conceded**: The player's expected goals conceded (for defenders and goalkeepers).
+
+59. **influence_rank**: The player's rank for influence among all players.
+
+60. **influence_rank_type**: The player's rank for influence among players of the same position.
+
+61. **creativity_rank**: The player's rank for creativity among all players.
+
+62. **creativity_rank_type**: The player's rank for creativity among players of the same position.
+
+63. **threat_rank**: The player's rank for threat among all players.
+
+64. **threat_rank_type**: The player's rank for threat among players of the same position.
+
+65. **ict_index_rank**: The player's rank for ICT Index among all players.
+
+66. **ict_index_rank_type**: The player's rank for ICT Index among players of the same position.
+
+67. **corners_and_indirect_freekicks_order**: The order of the player for taking corners and indirect free kicks.
+
+68. **corners_and_indirect_freekicks_text**: Additional text related to the player's role in taking corners and indirect free kicks.
+
+69. **direct_freekicks_order**: The order of the player for taking direct free kicks.
+
+70. **direct_freekicks_text**: Additional text related to the player's role in taking direct free kicks.
+
+71. **penalties_order**: The order of the player for taking penalties.
+
+72. **penalties_text**: Additional text related to the player's role in taking penalties.
+
+73. **expected_goals_per_90**: The player's expected goals per 90 minutes.
+
+74. **saves_per_90**: The number of saves the player makes per 90 minutes.
+
+75. **expected_assists_per_90**: The player's expected assists per 90 minutes.
+
+76. **expected_goal_involvements_per_90**: The player's expected goal involvements per 90 minutes.
+
+77. **expected_goals_conceded_per_90**: The player's expected goals conceded per 90 minutes (for defenders and goalkeepers).
+
+78. **goals_conceded_per_90**: The number of goals conceded
+
+ by the player's team per 90 minutes.
+
+79. **now_cost_rank**: The player's rank based on current cost among all players.
+
+80. **now_cost_rank_type**: The player's rank based on current cost among players of the same position.
+
+81. **form_rank**: The player's rank based on form among all players.
+
+82. **form_rank_type**: The player's rank based on form among players of the same position.
+
+83. **points_per_game_rank**: The player's rank based on points per game among all players.
+
+84. **points_per_game_rank_type**: The player's rank based on points per game among players of the same position.
+
+85. **selected_rank**: The player's rank based on the percentage of fantasy managers who have selected them.
+
+86. **selected_rank_type**: The player's rank based on the percentage of fantasy managers who have selected them among players of the same position.
+
+87. **starts_per_90**: The number of games the player starts per 90 minutes.
+
+88. **clean_sheets_per_90**: The number of clean sheets the player's team keeps per 90 minutes.
+

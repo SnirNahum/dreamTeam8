@@ -1,0 +1,68 @@
+.stats {
+  box-shadow: rgba(36, 33, 33, 0.08) 6px 6px 6px 6px;
+  padding-top: 0.8rem;
+  border-radius: 8px;
+
+  ul {
+    display: flex;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    li {
+      flex: 0 0 25%;
+      flex-basis: 12.5%;
+      min-height: 4.6rem;
+      padding: 0px 0.5rem;
+      list-style-type: none;
+      text-align: center;
+
+      &:not(:first-child) {
+        position: relative;
+      }
+      p {
+        font-size: 0.8em;
+        span {
+          border-bottom: 1px dotted $clr10;
+        }
+      }
+      &:not(:first-child)::before {
+        content: "";
+        position: absolute;
+        top: 6px;
+        bottom: 6px;
+        left: 0px;
+        width: 1px;
+        background-color: rgba(219, 194, 194, 0.4);
+      }
+    }
+  }
+}
+
+.player-name {
+  font-weight: 600;
+}
+.injury-player,
+.suspended-player {
+  color: $clr1;
+}
+.doubt-player {
+  color: $clr2;
+}
+
+.player-news {
+  margin: 15px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 8px;
+  opacity: 0.8;
+
+  &.doubt-player {
+    background-color: $clr2;
+    color: $clr10;
+  }
+  &.injury-player,
+  &.suspended-player {
+    color: $clr0;
+    background-color: $clr1;
+  }
+}

@@ -1,0 +1,14 @@
+.app-header {
+  width: 100%;
+  padding: 10px;
+
+  .app-header-links {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin-left: 1.5rem;
+    a {
+      padding: 0.6em;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, #00ff87, #02efff);
+  padding: 5px;
+  width: 300px;
+  height: 35px;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  position: relative;
+  transition: width 0.5s;
+}
+
+.magnifier {
+  width: 25px;
+  cursor: pointer;
+  position: absolute;
+  left: 20px;
+}
+
+.search-player-input {
+  background-color: transparent;
+  border: none;
+  margin: 10px 50px;
+  width: 100%;
+  outline: none;
+  color: rgb(100, 100, 100);
+  transition: width 0.1s;
+  transition-delay: 0.3s;
+}
+
+.active.search-bar-container {
+  width: 50px;
+}
+
+.active .search-player-input {
+  width: 0;
+}

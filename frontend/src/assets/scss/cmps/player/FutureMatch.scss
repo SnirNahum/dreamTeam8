@@ -1,0 +1,52 @@
+.future-match-card-container {
+  display: flex;
+  .future-match-card {
+    display: flex;
+    align-items: center;
+    height: 35px;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 1px 5px 0px;
+    p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+      width: 30px;
+    }
+    img {
+      width: 30px;
+      margin: 5px;
+    }
+  }
+}
+
+.past-match-points {
+  background-color: rgb(231, 231, 231);
+}
+
+.match-difficulty {
+  border-radius: 4px;
+}
+.match-difficulty-1 {
+  background-color: rgb(1, 252, 122);
+  color: $clr10;
+}
+.match-difficulty-2 {
+  background-color: rgb(1, 252, 122);
+  color: $clr10;
+}
+.match-difficulty-3 {
+  background-color: rgb(231, 231, 231);
+  color: $clr10;
+}
+.match-difficulty-4 {
+  background-color: rgb(255, 23, 81);
+  color: $clr0;
+}
+.match-difficulty-5 {
+  background-color: rgb(128, 7, 45);
+  color: $clr0;
+}

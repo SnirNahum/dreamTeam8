@@ -1,0 +1,30 @@
+.field-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  background: url("field.png") no-repeat;
+  background-size: 100% 100%;
+
+  .dashboard-gk,
+  .dashboard-def,
+  .dashboard-mid,
+  .dashboard-at {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+}
+.dashboard-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+
+  p {
+    font-size: 0.8rem;
+  }
+  img {
+    width: 40px;
+  }
+}

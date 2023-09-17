@@ -1,0 +1,20 @@
+.modal {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 0.2fr;
+  justify-content: center;
+  align-items: center;
+  .modal-content {
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+    &:focus {
+      outline: none;
+    }
+    background-image: linear-gradient(rgba(255, 255, 255, 0) 180px, $clr0 320px),
+      url(/static/media/pattern-1-874.c38b92af.png),
+      linear-gradient(to right, $clr4, $clr5);
+  }
+}
