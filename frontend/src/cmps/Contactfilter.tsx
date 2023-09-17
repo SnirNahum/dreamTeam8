@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 
-export function ContactFilter(props) {
+export function ContactFilter(props: any) {
   const [filterBy, setFilterBy] = useState(props.filterBy);
 
   useEffect(() => {
     props.onChangeFilter(filterBy);
   }, [filterBy]);
 
-  function handleChange({ target }) {
+  function handleChange({ target }: any) {
     const field = target.name;
     let value = target.value;
 
@@ -22,7 +22,7 @@ export function ContactFilter(props) {
         break;
     }
 
-    setFilterBy((prevFilterBy) => ({
+    setFilterBy((prevFilterBy: any) => ({
       ...prevFilterBy,
       [field]: value,
     }));
