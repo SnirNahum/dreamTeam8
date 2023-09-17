@@ -13,6 +13,7 @@ app.use(express.json());
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.resolve("public")));
+  ("https://dreamteam-yidh.onrender.com/");
 } else {
   const corsOptions = {
     origin: [
