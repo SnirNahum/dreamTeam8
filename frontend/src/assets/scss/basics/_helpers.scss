@@ -58,17 +58,17 @@
 }
 
 // Media helpers
-.square-ratio {
-  @include aspect-ratio(1, 1);
-}
+// .square-ratio {
+//   @include aspect-ratio(1, 1);
+// }
 
-.wide-ratio {
-  @include aspect-ratio(16, 9);
-}
+// .wide-ratio {
+//   @include aspect-ratio(16, 9);
+// }
 
-.square-3 {
-  @include aspect-ratio(4, 3);
-}
+// .square-3 {
+//   @include aspect-ratio(4, 3);
+// }
 
 // Buttons
 .simple-button {
