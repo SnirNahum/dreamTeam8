@@ -1,4 +1,4 @@
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   #root {
     display: grid;
     grid-template-rows: auto 1fr;
@@ -6,9 +6,6 @@
     margin: 0;
   }
   main {
-    display: flex;
-    justify-content: center;
-    width: 100%;
     margin: 0;
     padding: 0;
   }
@@ -27,9 +24,6 @@
     grid-template-columns: repeat(2, 160px);
     grid-gap: 1em;
   }
-  .player-list {
-    width: 90vw;
-  }
   .players-table {
     max-width: 90vw;
   }
@@ -38,8 +32,7 @@
   }
   .players-table .player-table-container th,
   .players-table .player-table-container td {
-    min-width: 0;
-    max-width: 100%;
+    max-width: 100vw;
     font-size: 14px;
     padding: 4px;
     border-radius: 0px;
@@ -97,14 +90,9 @@
     display: flex;
     flex-wrap: wrap;
     li {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
       flex-grow: 1;
     }
   }
-
   .player-preview-matches {
     padding: 0;
     gap: 0;
@@ -125,5 +113,9 @@
       height: 200px;
       gap: 0;
     }
+  }
+  .players-table {
+    width: 90vw;
+    max-width: 370px;
   }
 }
