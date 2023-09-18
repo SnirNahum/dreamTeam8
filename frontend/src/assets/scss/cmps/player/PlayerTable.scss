@@ -6,7 +6,7 @@
   cursor: pointer;
 
   .player-table-container {
-    width: 900px;
+    //width: 900px;
     border-spacing: 0;
     overflow: hidden;
     border-radius: 0.5rem;
@@ -64,7 +64,7 @@
 .pagination {
   display: flex;
   justify-content: space-between;
-  width: 900px;
+  // width: 900px;
 }
 
 .table-row:hover {
