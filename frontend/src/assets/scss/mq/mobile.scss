@@ -1,4 +1,4 @@
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 768px) {
   #root {
     display: grid;
     grid-template-rows: auto 1fr;
@@ -32,6 +32,7 @@
   }
   .players-table .player-table-container th,
   .players-table .player-table-container td {
+    border-spacing: 0;
     font-size: 14px;
     padding: 4px;
   }
@@ -42,9 +43,6 @@
   .player-cell img {
     padding: 5px;
     width: 1.8rem;
-  }
-  .pagination {
-    max-width: 100%;
   }
   .search-bar-container {
     height: 20px;
@@ -113,8 +111,15 @@
   .player-list {
     max-width: 90%;
   }
-}
-
-.react-table {
-  background-color: red;
+  .skeleton-player-list span {
+    width: 300px;
+    height: 35px;
+    &:first-child {
+      margin-bottom: 5px;
+    }
+  }
+  .table-header {
+    background: linear-gradient(to right, #00ff87, #02efff, #627bff);
+    border-spacing: 0;
+  }
 }

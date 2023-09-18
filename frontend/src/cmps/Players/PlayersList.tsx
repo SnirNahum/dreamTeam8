@@ -74,8 +74,8 @@ function PlayersList() {
     <div className="player-list">
       <PlayersTableFilter value={globalFilter} onChange={handleChange} />
       {isPlayerListEmpty ? (
-        <div>
-          <Skeleton count={10} height={40} width={900} />
+        <div className="skeleton-player-list">
+          <Skeleton count={11} />
         </div>
       ) : (
         <div className="players-table">
