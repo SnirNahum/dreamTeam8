@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 450px) {
   #root {
     display: grid;
     grid-template-rows: auto 1fr;
@@ -25,10 +25,10 @@
     grid-gap: 1em;
   }
   .players-table {
-    max-width: 80vw !important;
+    max-width: 80vw;
   }
   .players-table .player-table-container {
-    max-width: 80vw !important;
+    max-width: 80vw;
   }
   .players-table .player-table-container th,
   .players-table .player-table-container td {
@@ -37,7 +37,7 @@
   }
 
   .player-cell {
-    min-width: 100% !important;
+    min-width: 100%;
   }
   .player-cell img {
     padding: 5px;
@@ -111,6 +111,6 @@
     }
   }
   .player-list {
-    max-width: 90% !important;
+    max-width: 90%;
   }
 }

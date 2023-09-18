@@ -15,7 +15,6 @@ async function GeneralInfo() {
 }
 async function PlayerInfo(playerId) {
   try {
-    console.log(playerId);
     const BASE_URL = "https://fantasy.premierleague.com/api/";
     const response = await axios.get(`${BASE_URL}element-summary/${playerId}`);
     return response.data;
