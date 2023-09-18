@@ -32,7 +32,7 @@
       #02efff,
       #627bff,
       // rgba(2, 239, 255, 0)
-    ) !important;
+    );
   }
   .players-table {
     max-width: 80vw;
@@ -44,6 +44,16 @@
   .players-table .player-table-container td {
     font-size: 14px;
     padding: 4px;
+  }
+  .table-header tr {
+    border-spacing: 0;
+    background: linear-gradient(
+      to right,
+      #00ff87,
+      #02efff,
+      #627bff,
+      // rgba(2, 239, 255, 0)
+    );
   }
 
   .player-cell {
