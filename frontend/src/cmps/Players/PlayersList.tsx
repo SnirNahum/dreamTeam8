@@ -12,6 +12,7 @@ import TableRow from "./TableRow";
 import PlayerCell from "./PlayerCell";
 import PlayersTableFilter from "./PlayersTableFilter";
 import PtsFilter from "./PtsFilter";
+import "../../assets/scss/mq/mobile.scss";
 
 const columns = [
   {
