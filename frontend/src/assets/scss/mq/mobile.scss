@@ -24,6 +24,16 @@
     grid-template-columns: repeat(2, 160px);
     grid-gap: 1em;
   }
+  .table-header {
+    border-spacing: 0;
+    background: linear-gradient(
+      to right,
+      #00ff87,
+      #02efff,
+      #627bff,
+      // rgba(2, 239, 255, 0)
+    ) !important;
+  }
   .players-table {
     max-width: 80vw;
   }
@@ -32,7 +42,6 @@
   }
   .players-table .player-table-container th,
   .players-table .player-table-container td {
-    border-spacing: 0;
     font-size: 14px;
     padding: 4px;
   }
@@ -110,16 +119,13 @@
   }
   .player-list {
     max-width: 90%;
-  }
-  .skeleton-player-list span {
-    width: 300px;
-    height: 35px;
-    &:first-child {
-      margin-bottom: 5px;
+
+    .skeleton-player-list span {
+      width: 300px;
+      height: 35px;
+      &:first-child {
+        margin-bottom: 5px;
+      }
     }
-  }
-  .table-header {
-    background: linear-gradient(to right, #00ff87, #02efff, #627bff);
-    border-spacing: 0;
   }
 }
