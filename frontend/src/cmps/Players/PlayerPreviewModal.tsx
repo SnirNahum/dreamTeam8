@@ -1,7 +1,13 @@
 import { Modal, Box } from "@mui/material";
 import PlayerPreview from "./PlayerPreview";
 
-export default function PlayerPreviewModal({ player, open, handleClose }: any) {
+export default function PlayerPreviewModal({
+  player,
+  open,
+  handleClose,
+  getPlayer,
+  currPlayer,
+}: any) {
   return (
     <Modal
       className="modal"
@@ -11,7 +17,11 @@ export default function PlayerPreviewModal({ player, open, handleClose }: any) {
       aria-describedby="modal-modal-description"
     >
       <Box className="modal-content">
-        <PlayerPreview player={player} />
+        <PlayerPreview
+          player={player}
+          getPlayer={getPlayer}
+          currPlayer={currPlayer}
+        />
       </Box>
     </Modal>
   );

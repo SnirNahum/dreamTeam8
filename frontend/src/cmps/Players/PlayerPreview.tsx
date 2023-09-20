@@ -1,4 +1,5 @@
 import { loadPlayerInfo } from "../../store/actions/generalInfo.actions";
+import { setPlayerH2H } from "../../store/actions/generalInfo.actions";
 import PlayerImg from "../PlayerImg";
 import PlayerStats from "./PlayerStats";
 import PlayerBio from "./PlayerBio";
@@ -7,16 +8,21 @@ import PlayerNews from "./PlayerNews";
 import FutureMatchesList from "./FutureMatchesList";
 import PastMatchesList from "./PastMatchesList";
 
-export default function PlayerPreview({ player }: any) {
+export default function PlayerPreview({ player, getPlayer, currPlayer }: any) {
   useEffect(() => {
     loadPlayer(player.id);
+    updateH2HPlayer(player);
   }, [player.id]);
 
   async function loadPlayer(playerId: number) {
     await loadPlayerInfo(playerId);
   }
-
-  return (
+  async function updateH2HPlayer(player) {
+    if (getPlayer) {
+      getPlayer(player, currPlayer);
+    }
+  }
+  return !getPlayer ? (
     <section>
       <section className="player-preview">
         <PlayerNews player={player} />
@@ -33,5 +39,5 @@ export default function PlayerPreview({ player }: any) {
         </div>
       </div>
     </section>
-  );
+  ) : null;
 }

@@ -18,7 +18,7 @@ export default function AppHeader() {
         <NavLink to="/planner">Planner</NavLink>
         <NavLink to="/players">Players</NavLink>
         <NavLink to="/teams">Teams</NavLink>
-        <NavLink to="/fixtures">Fixtures</NavLink>
+        <NavLink to="/Head2Head">Head2Head</NavLink>
         <NavLink to="/predictions">Predictions</NavLink>
       </nav>
       <section>

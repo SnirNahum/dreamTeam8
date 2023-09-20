@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PlayerPreviewModal from "./PlayerPreviewModal";
 
-export default function TableRow({ row }: any) {
+export default function TableRow({ row, getPlayer, currPlayer }: any) {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -33,6 +33,8 @@ export default function TableRow({ row }: any) {
         open={open}
         handleOpen={handleOpen}
         handleClose={handleClose}
+        getPlayer={getPlayer}
+        currPlayer={currPlayer}
       />
     </tr>
   );

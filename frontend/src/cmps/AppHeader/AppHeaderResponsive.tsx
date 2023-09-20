@@ -23,8 +23,8 @@ export default function AppHeaderResponsive({ isOpen, handleChange }: any) {
       <NavLink to="/teams" onClick={handleChange}>
         Teams
       </NavLink>
-      <NavLink to="/fixtures" onClick={handleChange}>
-        Fixtures
+      <NavLink to="/Head2Head" onClick={handleChange}>
+        Head2Head
       </NavLink>
       <NavLink to="/predictions" onClick={handleChange}>
         Predictions

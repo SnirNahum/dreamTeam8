@@ -1,6 +1,8 @@
 export const SET_GENERALINFO = "SET_GENERALINFO";
 export const SET_PLAYERINFO = "SET_PLAYERINFO";
 export const SET_FILTER_BY = "SET_FILTER_BY";
+export const SET_Player1_H2H = "SET_Player1_H2H";
+export const SET_Player2_H2H = "SET_Player2_H2H";
 
 const initialState = {
   generalInfo: null,
@@ -10,11 +12,12 @@ const initialState = {
   playerFixtures: [],
   playerHistory: [],
   playerHistoryPast: [],
+  player1: {},
+  player2: {},
   filterBy: {
     name: "",
   },
 };
-
 export function fplReducer(state = initialState, action = {}) {
   switch (action.type) {
     case SET_GENERALINFO:
@@ -35,6 +38,16 @@ export function fplReducer(state = initialState, action = {}) {
       return {
         ...state,
         filterBy: { ...action.filterBy },
+      };
+    case SET_Player1_H2H:
+      return {
+        ...state,
+        player1: action.player,
+      };
+    case SET_Player2_H2H:
+      return {
+        ...state,
+        player2: action.player,
       };
 
     default:

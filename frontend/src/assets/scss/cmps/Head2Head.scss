@@ -1,0 +1,69 @@
+.head2head {
+  .head2head-player {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+  }
+  width: 367px;
+
+  .player-card-container {
+    display: flex;
+    max-width: 182px;
+  }
+
+  .player-card {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    height: 300px;
+    position: relative;
+    left: -8px;
+    justify-content: flex-start;
+    background-size: cover;
+    // background-image: url("https://res.cloudinary.com/datldedpm/image/upload/v1695144892/player-cards/r5rhaz4wogg5fkjlyqrz.webp");
+
+    .image-container {
+      position: relative;
+      width: 70px;
+      height: 43px;
+      overflow: hidden;
+      scale: (2.6);
+      margin: 0;
+      top: calc(50% - 70px);
+      left: calc(50% - 25px);
+
+      img {
+        width: 100%;
+      }
+    }
+    .player-card-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 34px;
+      font-size: 20px;
+    }
+  }
+
+  .player-card-stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 3px;
+  }
+  .player-card-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+  }
+  .ddd {
+    width: 50px;
+  }
+  .player-card-info-container {
+    position: relative;
+    top: 78px;
+    left: 10px;
+  }
+}

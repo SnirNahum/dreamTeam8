@@ -41,7 +41,7 @@ const columns = [
   },
 ];
 
-function PlayersList() {
+function PlayersList({ getPlayer, currPlayer }) {
   const players = useSelector((state: any) => state.fplModule.players);
 
   function handleChange(ev: any) {
@@ -91,7 +91,15 @@ function PlayersList() {
             <tbody className="table-body" {...getTableBodyProps()}>
               {page.map((row: any) => {
                 prepareRow(row);
-                return <TableRow key={row.id} row={row} players={players} />;
+                return (
+                  <TableRow
+                    key={row.id}
+                    row={row}
+                    players={players}
+                    getPlayer={getPlayer}
+                    currPlayer={currPlayer}
+                  />
+                );
               })}
             </tbody>
           </table>

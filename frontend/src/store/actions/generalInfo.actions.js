@@ -2,11 +2,27 @@ import {
   SET_FILTER_BY,
   SET_GENERALINFO,
   SET_PLAYERINFO,
+  SET_Player1_H2H,
+  SET_Player2_H2H,
 } from "../reducers/fpl.reducer";
 import { fplService } from "../../services/fplService";
 import { getRank, getTeamInfo } from "../../services/utilService";
 import { store } from "../store";
 
+export async function setPlayer1(player) {
+  const action = {
+    type: SET_Player1_H2H,
+    player,
+  };
+  store.dispatch(action);
+}
+export async function setPlayer2(player) {
+  const action = {
+    type: SET_Player2_H2H,
+    player,
+  };
+  store.dispatch(action);
+}
 export async function loadPlayerInfo(playerId) {
   try {
     const playerInfo = await fplService.loadPlayerInfo(playerId);
@@ -23,6 +39,7 @@ export async function loadPlayerInfo(playerId) {
     });
     const action = {
       type: SET_PLAYERINFO,
+      playerInfo,
       playerFixtures,
       playerHistory,
       playerHistoryPast,

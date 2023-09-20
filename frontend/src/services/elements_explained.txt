@@ -177,3 +177,103 @@
 
 88. **clean_sheets_per_90**: The number of clean sheets the player's team keeps per 90 minutes.
 
+
+
+
+
+
+
+
+// const [chartData, setChartData] = useState({
+//     series: [
+//       {
+//         name: "Series 1",
+//         data: [20, 100, 40, 30, 50],
+//       },
+//       {
+//         name: "Series 2",
+//         data: [60, 45, 70, 90, 30],
+//       },
+//     ],
+//     options: {
+//       chart: {
+//         height: 350,
+//         type: "radar",
+//       },
+//       dataLabels: {
+//         enabled: true,
+//       },
+//       plotOptions: {
+//         radar: {
+//           size: 120,
+//           polygons: {
+//             strokeColors: "#e9e9e9",
+//             fill: {
+//               colors: ["#f8f8f8", "#fff"],
+//             },
+//           },
+//         },
+//       },
+//       title: {
+//         text: "Radar with Polygon Fill",
+//       },
+//       colors: ["#FF4560", "#008FFB"],
+//       markers: {
+//         size: 4,
+
+//         colors: ["#fff", "#fff"],
+//         strokeColor: ["#FF4560", "#008FFB"],
+//         strokeWidth: 2,
+//       },
+//       tooltip: {
+//         y: {
+//           formatter: function (val) {
+//             return val;
+//           },
+//         },
+//       },
+//       xaxis: {
+//         categories: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+//       },
+//       yaxis: {
+//         tickAmount: 4,
+//         labels: {
+//           formatter: function (val, i) {
+//             if (i % 2 === 0) {
+//               return val;
+//             } else {
+//               return "";
+//             }
+//           },
+//         },
+//       },
+//     },
+//   });
+
+//   useEffect(() => {
+//     // Use useEffect to fetch data when the component mounts
+//     fetchData();
+//   }, []); // Empty dependency array ensures that this effect runs only once when the component mounts
+
+//   const fetchData = () => {
+//     const fetchedData = data1.elements;
+
+//     // Update the state with the fetched data
+//     setChartData({
+//       ...chartData,
+//       series: fetchedData.series,
+//       options: fetchedData.options,
+//     });
+//   };
+
+//   return (
+//     <div id="chart">
+//       <ReactApexChart
+//         options={chartData.options}
+//         series={chartData.series}
+//         type="radar"
+//         height={350}
+//       />
+//     </div>
+//   );
+// }
