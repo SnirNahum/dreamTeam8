@@ -7,7 +7,7 @@ const PolygonChart = ({ player1, player2 }) => {
     series: [
       {
         name: player1.web_name,
-        data: [20, 10, 40, 30, 50],
+        data: [20, 10, 40, 20, 50],
       },
       {
         name: player2.web_name,
