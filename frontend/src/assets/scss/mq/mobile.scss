@@ -35,10 +35,10 @@
     );
   }
   .players-table {
-    max-width: 80vw;
+    max-width: 100%;
   }
   .players-table .player-table-container {
-    max-width: 80vw;
+    width: 100%;
   }
   .players-table .player-table-container th,
   .players-table .player-table-container td {
@@ -128,7 +128,7 @@
     }
   }
   .player-list {
-    max-width: 90%;
+    width: 100%;
 
     .skeleton-player-list span {
       width: 300px;

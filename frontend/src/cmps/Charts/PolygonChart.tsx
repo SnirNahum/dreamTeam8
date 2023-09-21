@@ -34,7 +34,7 @@ const PolygonChart = ({ player1, player2 }) => {
           },
         },
       },
-      colors: ["#FF4560", "#008FFB"],
+      colors: ["#d5b824", "#a31751"],
       markers: {},
       tooltip: {
         y: {
