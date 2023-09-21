@@ -1,27 +1,26 @@
 import { useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
-import data1 from "../../services/data.json";
 
-const PolygonChart = ({ player1, player2 }) => {
+const PolygonChart = ({ player1, player2 }: any) => {
   const [chartData, setChartData] = useState({
-    series: [
-      {
-        name: player1.web_name,
-        data: [20, 10, 40, 20, 50],
-      },
-      {
-        name: player2.web_name,
-        data: [60, 45, 70, 5, 30],
-      },
-    ],
+    series: [],
     options: {
       chart: {
         height: 350,
         type: "radar",
       },
-
       dataLabels: {
         enabled: false,
+      },
+      title: {
+        text: "Expected Stats",
+        align: "center",
+        style: {
+          fontSize: "14px",
+          fontWeight: "bold",
+          fontFamily: undefined,
+          color: "brown",
+        },
       },
       plotOptions: {
         radar: {
@@ -34,7 +33,7 @@ const PolygonChart = ({ player1, player2 }) => {
           },
         },
       },
-      colors: ["#d5b824", "#a31751"],
+      colors: ["#fee22c", "#a31751"],
       markers: {},
       tooltip: {
         y: {
@@ -44,11 +43,19 @@ const PolygonChart = ({ player1, player2 }) => {
         },
       },
       xaxis: {
-        categories: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+        categories: [
+          "Involvment",
+          "Goals",
+          "Points next",
+          "Points now",
+          "Assists",
+          "Pts/Per game",
+        ],
       },
       yaxis: {
-        tickAmount: 6,
+        tickAmount: 5,
         labels: {
+          // minWidth: 50,
           formatter: function (val: any, i: number) {
             if (i % 2 === 0) {
               return val;
@@ -62,26 +69,50 @@ const PolygonChart = ({ player1, player2 }) => {
   });
 
   useEffect(() => {
-    // Use useEffect to fetch data when the component mounts
-    fetchData();
-  }, []); // Empty dependency array ensures that this effect runs only once when the component mounts
+    const updatedSeries = generateSeriesData(player1, player2);
 
-  const fetchData = () => {
-    const fetchedData = data1.elements;
+    setChartData({
+      series: updatedSeries,
+    });
+  }, [player1, player2]);
 
-    // Update the state while preserving the existing properties
-    setChartData((prevChartData) => ({
-      ...prevChartData,
-      series: chartData.series,
-      options: chartData.options,
-    }));
+  // Function to generate series data based on player props
+  const generateSeriesData = (player1, player2) => {
+    // Implement your logic to generate series data based on player props
+    const seriesData = [
+      {
+        name: player1.web_name,
+        data: [
+          player1.expected_goal_involvements_per_90,
+          player1.expected_goals_per_90,
+          player1.ep_next,
+          player1.ep_this,
+          player1.expected_assists_per_90,
+          player1.points_per_game,
+        ],
+      },
+      {
+        name: player2.web_name,
+        data: [
+          player2.expected_goal_involvements_per_90,
+          player2.expected_goals_per_90,
+          player2.ep_next,
+          player2.ep_this,
+          player2.expected_assists_per_90,
+          player2.points_per_game,
+          // player2.ep_this,
+        ],
+      },
+    ];
+
+    return seriesData;
   };
 
   return (
     <div id="chart">
       <ReactApexChart
-        options={chartData.options}
-        series={chartData.series}
+        options={chartData.options || {}}
+        series={chartData.series || {}}
         type="radar"
         height={350}
       />

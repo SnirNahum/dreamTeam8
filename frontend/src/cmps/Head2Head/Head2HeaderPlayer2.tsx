@@ -3,7 +3,7 @@ import { getTeamImg } from "../../services/utilService";
 export default function Head2HeaderPlayer2({ player }: any) {
   return (
     <div className="player-card-container">
-      {player ? (
+      {player !== null && Object.keys(player).length !== 0 ? (
         <div
           className="player-card"
           style={{

@@ -1,9 +1,11 @@
 import { getTeamImg } from "../../services/utilService";
 
 export default function Head2HeaderPlayer1({ player }: any) {
+  console.log(player);
+
   return (
     <div className="player-card-container">
-      {player ? (
+      {player !== null && Object.keys(player).length !== 0 ? (
         <div
           className="player-card"
           style={{
@@ -44,7 +46,6 @@ export default function Head2HeaderPlayer1({ player }: any) {
         <div
           className="player-card"
           style={{
-            color: "black",
             backgroundImage: `url(${"https://res.cloudinary.com/datldedpm/image/upload/v1695144892/player-cards/j1bixcobnhbfwxztk4oi.webp"})`,
           }}
         ></div>

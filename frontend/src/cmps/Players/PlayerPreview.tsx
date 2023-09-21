@@ -9,6 +9,8 @@ import FutureMatchesList from "./FutureMatchesList";
 import PastMatchesList from "./PastMatchesList";
 
 export default function PlayerPreview({ player, getPlayer, currPlayer }: any) {
+  console.log(player);
+
   useEffect(() => {
     loadPlayer(player.id);
     updateH2HPlayer(player);

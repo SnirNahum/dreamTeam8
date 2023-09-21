@@ -13,6 +13,7 @@ import PlayerCell from "./PlayerCell";
 import PlayersTableFilter from "./PlayersTableFilter";
 import PtsFilter from "./PtsFilter";
 import "../../assets/scss/mq/mobile.scss";
+import { useState } from "react";
 
 const columns = [
   {
@@ -40,12 +41,17 @@ const columns = [
     accessor: "now_cost",
   },
 ];
-
 function PlayersList({ getPlayer, currPlayer }) {
   const players = useSelector((state: any) => state.fplModule.players);
+  const [emptyFilter, setEmtpyFilter] = useState("");
 
   function handleChange(ev: any) {
     setGlobalFilter(ev.target.value);
+    const filteredPlayers = players.filter((player) =>
+      player.web_name.toLowerCase().includes(ev.target.value.toLowerCase())
+    );
+    setEmtpyFilter(filteredPlayers);
+    console.log(emptyFilter);
   }
 
   const {
@@ -78,42 +84,48 @@ function PlayersList({ getPlayer, currPlayer }) {
           <Skeleton count={11} />
         </div>
       ) : (
-        <div className="players-table">
-          <table className="player-table-container" {...getTableProps()}>
-            <thead className="table-header">
-              {headerGroups.map((headerGroup: any, index: any) => (
-                <TableHeader
-                  key={headerGroup.headers[index]}
-                  headerGroup={headerGroup}
+        <>
+          {emptyFilter.length === 0 && emptyFilter ? (
+            <div className="empty-player-filter">No players found</div>
+          ) : (
+            <div className="players-table">
+              <table className="player-table-container" {...getTableProps()}>
+                <thead className="table-header">
+                  {headerGroups.map((headerGroup: any, index: any) => (
+                    <TableHeader
+                      key={headerGroup.headers[index]}
+                      headerGroup={headerGroup}
+                    />
+                  ))}
+                </thead>
+                <tbody className="table-body" {...getTableBodyProps()}>
+                  {page.map((row: any) => {
+                    prepareRow(row);
+                    return (
+                      <TableRow
+                        key={row.id}
+                        row={row}
+                        players={players}
+                        getPlayer={getPlayer}
+                        currPlayer={currPlayer}
+                      />
+                    );
+                  })}
+                </tbody>
+              </table>
+              <div className="pagination">
+                <Pagination
+                  canPreviousPage={canPreviousPage}
+                  canNextPage={canNextPage}
+                  previousPage={previousPage}
+                  nextPage={nextPage}
+                  pageIndex={pageIndex}
+                  pageOptions={pageOptions}
                 />
-              ))}
-            </thead>
-            <tbody className="table-body" {...getTableBodyProps()}>
-              {page.map((row: any) => {
-                prepareRow(row);
-                return (
-                  <TableRow
-                    key={row.id}
-                    row={row}
-                    players={players}
-                    getPlayer={getPlayer}
-                    currPlayer={currPlayer}
-                  />
-                );
-              })}
-            </tbody>
-          </table>
-          <div className="pagination">
-            <Pagination
-              canPreviousPage={canPreviousPage}
-              canNextPage={canNextPage}
-              previousPage={previousPage}
-              nextPage={nextPage}
-              pageIndex={pageIndex}
-              pageOptions={pageOptions}
-            />
-          </div>
-        </div>
+              </div>
+            </div>
+          )}
+        </>
       )}
     </div>
   );
