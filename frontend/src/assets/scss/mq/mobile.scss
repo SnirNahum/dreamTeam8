@@ -90,21 +90,8 @@
     img {
       width: 30%;
     }
-    .player-bio {
-      width: 30%;
-      p,
-      h5 {
-        font-size: 14px;
-      }
-    }
   }
-  .stats ul {
-    display: flex;
-    flex-wrap: wrap;
-    li {
-      flex-grow: 1;
-    }
-  }
+
   .player-preview-matches {
     margin-top: 20px;
     padding: 0;

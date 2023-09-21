@@ -11,5 +11,17 @@
     a {
       padding: 0.6em;
     }
+    a:hover {
+      text-decoration: underline;
+    }
   }
+}
+
+.active {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.logo {
+  text-decoration: none;
 }

@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   padding-bottom: 0;
-  gap: 3em;
+  gap: 2em;
 }
 
 .position-ranking {
@@ -27,5 +27,34 @@
     text-align: center;
     font-size: 16px;
     margin-bottom: 10px;
+  }
+}
+
+.player-position {
+  display: inline-block;
+  padding: 0.2rem 0.8rem;
+  border-radius: 0px 0px 6px 6px;
+  background-color: $clr3;
+  color: $clr4;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .player-bio {
+    flex: 1;
+    h5 {
+      font-size: 15px;
+      font-weight: 600;
+      padding: 3px;
+      padding-left: 0;
+    }
+    p {
+      font-size: 12px;
+      font-weight: 400;
+    }
+  }
+  .position-ranking {
+    position: sticky;
+    left: 1px;
   }
 }

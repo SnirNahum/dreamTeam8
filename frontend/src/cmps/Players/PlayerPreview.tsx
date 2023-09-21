@@ -1,5 +1,4 @@
 import { loadPlayerInfo } from "../../store/actions/generalInfo.actions";
-import { setPlayerH2H } from "../../store/actions/generalInfo.actions";
 import PlayerImg from "../PlayerImg";
 import PlayerStats from "./PlayerStats";
 import PlayerBio from "./PlayerBio";
@@ -9,8 +8,6 @@ import FutureMatchesList from "./FutureMatchesList";
 import PastMatchesList from "./PastMatchesList";
 
 export default function PlayerPreview({ player, getPlayer, currPlayer }: any) {
-  console.log(player);
-
   useEffect(() => {
     loadPlayer(player.id);
     updateH2HPlayer(player);

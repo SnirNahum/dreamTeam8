@@ -38,6 +38,27 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .stats {
+    width: 100%;
+    overflow: auto;
+  }
+  .stats ul {
+    width: 530px;
+    display: flex;
+    gap: 5px;
+
+    li {
+      flex-grow: 2;
+      h3 {
+        font-size: 15px;
+      }
+    }
+  }
+}
+.position-ranks {
+  position: sticky;
+}
 .player-name {
   font-weight: 600;
 }

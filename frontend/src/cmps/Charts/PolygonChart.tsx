@@ -6,7 +6,7 @@ const PolygonChart = ({ player1, player2 }: any) => {
     series: [],
     options: {
       chart: {
-        height: 350,
+        height: 0,
         type: "radar",
       },
       dataLabels: {
@@ -16,8 +16,8 @@ const PolygonChart = ({ player1, player2 }: any) => {
         text: "Expected Stats",
         align: "center",
         style: {
-          fontSize: "14px",
-          fontWeight: "bold",
+          fontSize: "20px",
+          fontWeight: "regular",
           fontFamily: undefined,
           color: "brown",
         },
@@ -25,6 +25,8 @@ const PolygonChart = ({ player1, player2 }: any) => {
       plotOptions: {
         radar: {
           size: 130,
+          offsetX: 3,
+          offsetY: 0,
           polygons: {
             strokeColors: "#e9e9e9",
             fill: {
@@ -34,7 +36,12 @@ const PolygonChart = ({ player1, player2 }: any) => {
         },
       },
       colors: ["#fee22c", "#a31751"],
-      markers: {},
+      markers: {
+        size: 4,
+        hover: {
+          size: 10,
+        },
+      },
       tooltip: {
         y: {
           formatter: function (val: any) {
@@ -51,9 +58,10 @@ const PolygonChart = ({ player1, player2 }: any) => {
           "Assists",
           "Pts/Per game",
         ],
+        labels: { rotate: 90 },
       },
       yaxis: {
-        tickAmount: 5,
+        tickAmount: 6,
         labels: {
           // minWidth: 50,
           formatter: function (val: any, i: number) {
@@ -100,7 +108,6 @@ const PolygonChart = ({ player1, player2 }: any) => {
           player2.ep_this,
           player2.expected_assists_per_90,
           player2.points_per_game,
-          // player2.ep_this,
         ],
       },
     ];

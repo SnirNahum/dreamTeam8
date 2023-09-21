@@ -14,9 +14,6 @@ export default function AppHeaderResponsive({ isOpen, handleChange }: any) {
       <NavLink to="/" onClick={handleChange}>
         Dashboard
       </NavLink>
-      <NavLink to="/planner" onClick={handleChange}>
-        Planner
-      </NavLink>
       <NavLink to="/players" onClick={handleChange}>
         Players
       </NavLink>
@@ -25,12 +22,6 @@ export default function AppHeaderResponsive({ isOpen, handleChange }: any) {
       </NavLink>
       <NavLink to="/Head2Head" onClick={handleChange}>
         Head2Head
-      </NavLink>
-      <NavLink to="/predictions" onClick={handleChange}>
-        Predictions
-      </NavLink>
-      <NavLink to="/login" onClick={handleChange}>
-        Login
       </NavLink>
     </Menu>
   );

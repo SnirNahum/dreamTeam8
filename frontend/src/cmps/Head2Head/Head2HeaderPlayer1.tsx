@@ -1,8 +1,6 @@
 import { getTeamImg } from "../../services/utilService";
 
 export default function Head2HeaderPlayer1({ player }: any) {
-  console.log(player);
-
   return (
     <div className="player-card-container">
       {player !== null && Object.keys(player).length !== 0 ? (
