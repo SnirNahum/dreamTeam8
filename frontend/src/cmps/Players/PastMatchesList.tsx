@@ -29,7 +29,7 @@ export default function PastMatchesList() {
 
   return (
     <section>
-      <h1>Past Matches</h1>
+      <h1>Previous Form</h1>
       <div className="future-match-card-container">
         {isLoading ? (
           <div className="skeleton-players-page">

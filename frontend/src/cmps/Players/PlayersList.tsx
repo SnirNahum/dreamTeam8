@@ -51,7 +51,6 @@ function PlayersList({ getPlayer, currPlayer }) {
       player.web_name.toLowerCase().includes(ev.target.value.toLowerCase())
     );
     setEmtpyFilter(filteredPlayers);
-    console.log(emptyFilter);
   }
 
   const {

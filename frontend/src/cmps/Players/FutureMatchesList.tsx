@@ -31,7 +31,7 @@ function FutureMatchesList() {
 
   return (
     <section>
-      <h1>Future Matches</h1>
+      <h1>Next Fixtures</h1>
       <div className="future-match-card-container">
         {isLoading ? (
           <div className="skeleton-players-page">
