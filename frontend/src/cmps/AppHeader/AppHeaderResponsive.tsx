@@ -7,27 +7,29 @@ export default function AppHeaderResponsive() {
 
   useEffect(() => {
     if (isOpen) {
+      document.body.classList.add("disable-scroll");
       document.addEventListener("click", handleOutsideClick);
-
-      return () => {
-        document.removeEventListener("click", handleOutsideClick);
-      };
+    } else {
+      document.body.classList.remove("disable-scroll");
+      document.removeEventListener("click", handleOutsideClick);
     }
+    function handleOutsideClick(e) {
+      const menu = document.querySelector(".bm-menu");
+      const itemList = document.querySelector(".bm-item-list");
+      const closeButton = document.querySelector(".bm-cross-button");
+
+      if (
+        !menu.contains(e.target) &&
+        !itemList.contains(e.target) &&
+        !closeButton.contains(e.target)
+      ) {
+        closeMenu();
+      }
+    }
+    return () => {
+      document.body.classList.remove("disable-scroll");
+    };
   }, [isOpen]);
-
-  function handleOutsideClick(e) {
-    const menu = document.querySelector(".bm-menu");
-    const itemList = document.querySelector(".bm-item-list");
-    const closeButton = document.querySelector(".bm-cross-button");
-
-    if (
-      !menu.contains(e.target) &&
-      !itemList.contains(e.target) &&
-      !closeButton.contains(e.target)
-    ) {
-      closeMenu();
-    }
-  }
 
   function closeMenu() {
     setIsOpen(false);
