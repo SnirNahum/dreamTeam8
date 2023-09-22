@@ -27,6 +27,14 @@ export default function PlayerStats({ player }: PlayerProps) {
             <h3>{player.total_points}</h3>
           </li>
           <li>
+            <p>Goals Scored</p>
+            <h3>{player.goals_scored}</h3>
+          </li>
+          <li>
+            <p>Assists</p>
+            <h3>{player.assists}</h3>
+          </li>
+          <li>
             <p>Total Bonus</p>
             <h3>{player.bonus}</h3>
           </li>

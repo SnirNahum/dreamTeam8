@@ -73,3 +73,27 @@ input {
   font-family: inherit;
   text-align: inherit;
 }
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: 0px;
+  scrollbar-color: #dfd5e2 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 0px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #4545454a;
+  border-radius: 8px;
+  border: 1px solid #ffffff;
+}

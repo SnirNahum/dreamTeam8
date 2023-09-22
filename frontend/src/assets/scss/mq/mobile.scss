@@ -45,16 +45,6 @@
     font-size: 14px;
     padding: 4px;
   }
-  .table-header tr {
-    border-spacing: 0;
-    background: linear-gradient(
-      to right,
-      #00ff87,
-      #02efff,
-      #627bff,
-      // rgba(2, 239, 255, 0)
-    );
-  }
 
   .player-cell {
     min-width: 100%;
@@ -115,7 +105,7 @@
     }
   }
   .player-list {
-    width: 100%;
+    width: 94%;
 
     .skeleton-player-list span {
       width: 100%;
