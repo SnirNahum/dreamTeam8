@@ -17,4 +17,18 @@
       url(/static/media/pattern-1-874.c38b92af.png),
       linear-gradient(to right, $clr4, $clr5);
   }
+  .modal-close-btn {
+    display: flex;
+    margin-inline-start: auto;
+    max-width: 0px;
+    padding: 0.6rem 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+    line-height: 0;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }

@@ -1,5 +1,6 @@
 import { Modal, Box } from "@mui/material";
 import PlayerPreview from "./PlayerPreview";
+import { CheckIcon } from "../../services/svg.service";
 
 export default function PlayerPreviewModal({
   player,
@@ -17,6 +18,9 @@ export default function PlayerPreviewModal({
       aria-describedby="modal-modal-description"
     >
       <Box className="modal-content">
+        <div className="modal-close-btn" onClick={handleClose}>
+          <CheckIcon />
+        </div>
         <PlayerPreview
           player={player}
           getPlayer={getPlayer}
