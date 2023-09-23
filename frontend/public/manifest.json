@@ -16,5 +16,32 @@
   "start_url": "./frontend",
   "display": "standalone",
   "theme_color": "#fff",
-  "background_color": "#fff"
+  "background_color": "#fff",
+  "id": "217",
+  "description": "Introducing Dream Team, the essential FPL Fantasy analysis tool designed to supercharge your fantasy football experience. Elevate your game with real-time data and unparalleled insights. Get ready to conquer the Fantasy Premier League and assemble the ultimate Dream Team.",
+  "lang": "en",
+  "display_override": ["window-controls-overlay"],
+  "categories": ["entertainment", "sports"],
+  "screenshots": [
+    {
+      "src": "https://res.cloudinary.com/datldedpm/image/upload/v1695484629/app-screenshots/h2h_xtgfnv.png",
+      "sizes": "750x1334",
+      "type": "image/png"
+    },
+    {
+      "src": "https://res.cloudinary.com/datldedpm/image/upload/v1695484628/app-screenshots/plyers-page_qoycd1.png",
+      "sizes": "1280x800",
+      "type": "image/png"
+    },
+    {
+      "src": "https://res.cloudinary.com/datldedpm/image/upload/v1695484629/app-screenshots/player-bio-mobile_yixg7i.png",
+      "sizes": "750x1334",
+      "type": "image/png"
+    },
+    {
+      "src": "https://res.cloudinary.com/datldedpm/image/upload/v1695484628/app-screenshots/plyers-page_qoycd1.png",
+      "sizes": "1280x800",
+      "type": "image/png"
+    }
+  ]
 }
