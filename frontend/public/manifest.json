@@ -5,12 +5,8 @@
     {
       "src": "Square150x150Logo.scale-400.png",
       "sizes": "600x600",
-      "type": "image/png"
-    },
-    {
-      "src": "apple-touch-icon.png",
-      "sizes": "188x188",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     }
   ],
   "start_url": "./frontend",

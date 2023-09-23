@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { slide as Menu } from "react-burger-menu";
 import { NavLink } from "react-router-dom";
+import DownloadApp from "../Buttons/DownloadApp";
 
 export default function AppHeaderResponsive() {
   const [isOpen, setIsOpen] = useState(false);
@@ -58,6 +59,7 @@ export default function AppHeaderResponsive() {
       <NavLink to="/Head2Head" onClick={closeMenu}>
         Head2Head
       </NavLink>
+      <DownloadApp />
     </Menu>
   );
 }
