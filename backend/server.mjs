@@ -13,7 +13,7 @@ app.use(express.json());
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.resolve("public")));
-  ("https://dreamteam-1.onrender.com");
+  ("https://dreamteam-1.onrender.com/");
 } else {
   const corsOptions = {
     origin: [
@@ -40,6 +40,7 @@ setupSocketAPI(server);
 app.get("/**", (req, res) => {
   res.sendFile(path.resolve("public/index.html"));
 });
+console.log(process.env.NODE_ENV);
 
 import { logger } from "./services/logger.service.js";
 const port = process.env.PORT || 3030;
