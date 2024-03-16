@@ -9,13 +9,15 @@ export default function PlayerPreviewModal({
   getPlayer,
   currPlayer,
 }: any) {
+  console.log(player);
   return (
+    
     <Modal
-      className="modal"
-      open={open}
-      onClose={handleClose}
-      aria-labelledby="modal-modal-title"
-      aria-describedby="modal-modal-description"
+    className="modal"
+    open={open}
+    onClose={handleClose}
+    aria-labelledby="modal-modal-title"
+    aria-describedby="modal-modal-description"
     >
       <Box className="modal-content">
         <div className="modal-close-btn" onClick={handleClose}>

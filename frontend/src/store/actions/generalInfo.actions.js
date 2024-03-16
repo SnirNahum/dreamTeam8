@@ -24,6 +24,7 @@ export async function setPlayer2(player) {
   store.dispatch(action);
 }
 export async function loadPlayerInfo(playerId) {
+  console.log(playerId);
   try {
     const playerInfo = await fplService.loadPlayerInfo(playerId);
     const playerFixtures = playerInfo.fixtures;
