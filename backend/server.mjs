@@ -13,17 +13,22 @@ app.use(express.json());
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.resolve("public")));
-  ("https://dreamteam-1.onrender.com/");
+  app.use(cors({
+    origin: "https://dreamteam-1.onrender.com",
+    credentials: true,
+  }));
 } else {
   const corsOptions = {
     origin: [
       "http://127.0.0.1:5173",
       "http://localhost:5173",
       "http://localhost:3030",
-      "http://10.100.102.7:5173/",
-      "http://10.100.102.7:5173",
       "http://127.0.0.1:3030",
-      "https://dreamteam-1.onrender.com/",
+      "http://10.100.102.7:5173",
+      "http://localhost:3030",
+      "http://localhost:4173",
+      "http://10.100.102.7:4173",
+      "https://dreamteam-1.onrender.com"
     ],
     credentials: true,
   };
@@ -31,19 +36,14 @@ if (process.env.NODE_ENV === "production") {
 }
 
 import { fplRoutes } from "./api/fpl/fpl.routes.js";
-import { setupSocketAPI } from "./services/socket.service.js";
 
 // routes
-
 app.use("/api", fplRoutes);
-setupSocketAPI(server);
 
 app.get("/**", (req, res) => {
   res.sendFile(path.resolve("public/index.html"));
 });
 
-import { logger } from "./services/logger.service.js";
 const port = process.env.PORT || 3030;
 server.listen(port, () => {
-  logger.info("Server is running on port: " + port);
 });

@@ -1,8 +1,9 @@
 import Axios from "axios";
-// import { router } from '@/router'
 
-const BASE_URL =
-  process.env.NODE_ENV === "production" ? "/api/" : "//localhost:3030/api/";
+// Define the BASE_URL based on the environment
+const BASE_URL = process.env.NODE_ENV === "production"
+  ? 'https://dreamteam-1.onrender.com/api/'
+  : 'http://localhost:3030/api/';
 
 const axios = Axios.create({
   withCredentials: true,

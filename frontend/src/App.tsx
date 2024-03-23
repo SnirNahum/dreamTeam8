@@ -14,6 +14,7 @@ import MobileAppHeader from "./cmps/AppHeader/MobileAppHeader";
 function App() {
   useEffect(() => {
     loadGeneralInfo();
+    
   }, []);
   return (
     <Router>
