@@ -7,6 +7,7 @@ export const fplService = {
 
 async function loadGeneralInfo() {
   const generaInfo = await httpService.get("generalInfo");
+  console.log('generaInfo: ', generaInfo);
   generaInfo.elements.sort((a, b) => b.total_points - a.total_points);
   return generaInfo;
 }

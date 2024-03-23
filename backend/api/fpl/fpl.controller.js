@@ -5,6 +5,7 @@ export async function getGeneralInfo(req, res) {
   try {
     const generalInfo = await fplService.GeneralInfo();
     // logger.info("General Info loaded successfully");
+    console.log(generalInfo);
     res.json(generalInfo);
   } catch (err) {
     // logger.error("Failed to get general info", err);

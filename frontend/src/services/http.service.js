@@ -1,27 +1,22 @@
 import Axios from "axios";
 
-// Define the BASE_URL based on the environment
-const BASE_URL = process.env.NODE_ENV === "production"
-  ? '/api/'
-  : 'http://localhost:3030/api/';
+// Define the base URL
+const BASE_URL = 'https://dreamteam-1.onrender.com/api/';
 
 const axios = Axios.create({
   withCredentials: true,
 });
 
 export const httpService = {
-  get(endpoint, data) {
+  async get(endpoint, data) {
+    // Log the full URL before making the request
+    const fullURL = `${BASE_URL}${endpoint}`;
+    console.log("Request URL:", fullURL);
+    
+    // Make the GET request using Axios
     return ajax(endpoint, "GET", data);
   },
-  post(endpoint, data) {
-    return ajax(endpoint, "POST", data);
-  },
-  put(endpoint, data) {
-    return ajax(endpoint, "PUT", data);
-  },
-  delete(endpoint, data) {
-    return ajax(endpoint, "DELETE", data);
-  },
+  // Define other HTTP methods (post, put, delete) similarly...
 };
 
 async function ajax(endpoint, method = "GET", data = null) {
@@ -42,10 +37,6 @@ async function ajax(endpoint, method = "GET", data = null) {
     if (err.response && err.response.status === 401) {
       sessionStorage.clear();
       window.location.assign("/");
-      // Depends on routing startegy - hash or history
-      // window.location.assign('/#/login')
-      // window.location.assign('/login')
-      // router.push('/login')
     }
     throw err;
   }
