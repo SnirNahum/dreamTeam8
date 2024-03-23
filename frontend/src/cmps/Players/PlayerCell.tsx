@@ -10,7 +10,7 @@ function PlayerCell({ value, player }: any) {
   return (
     <div className="player-cell">
       {isLoading ? (
-        <Skeleton width={40} height={50} />
+        <Skeleton width={50} height={60} />
       ) : (
         <img
           src={`https://yvrzozsmicwmxmhmjjty.supabase.in/storage/v1/object/public/public/kits/2023-24/shirt_${player.team_code}-220.png`}

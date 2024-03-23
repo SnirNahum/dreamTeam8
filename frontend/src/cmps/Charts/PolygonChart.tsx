@@ -61,7 +61,7 @@ const PolygonChart = ({ player1, player2 }: any) => {
         labels: { rotate: 90 },
       },
       yaxis: {
-        tickAmount: 6,
+        tickAmount: 4,
         labels: {
           // minWidth: 50,
           formatter: function (val: any, i: number) {

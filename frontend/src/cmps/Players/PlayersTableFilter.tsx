@@ -1,4 +1,4 @@
-import { ChangeEventHandler, useEffect, useRef } from "react";
+import { ChangeEventHandler, useEffect, useRef, useState } from "react";
 
 type PlayersTableFilterProps = {
   value: string | number;
@@ -9,30 +9,20 @@ export default function PlayersTableFilter({
   value,
   onChange,
 }: PlayersTableFilterProps) {
-  const inputRef = useRef<HTMLInputElement | null>(null);
+  const inputRef = useRef();
+
+  const [searchToggle, setSearchToggle] = useState(false);
+  const searchBarContainerEl = document.querySelector(".search-bar-container");
 
   useEffect(() => {
-    const magnifierEl = document.querySelector(".magnifier");
-    const searchBarContainerEl = document.querySelector(
-      ".search-bar-container"
-    );
-
-    if (magnifierEl) {
-      magnifierEl.addEventListener("click", () => {
-        inputRef.current?.focus();
-
-        searchBarContainerEl?.classList.toggle("active");
-      });
+    if (searchToggle) {
+      inputRef.current?.focus();
     }
-
-    return () => {
-      if (magnifierEl) {
-        magnifierEl.removeEventListener("click", () => {
-          searchBarContainerEl?.classList.toggle("active");
-        });
-      }
-    };
-  }, []);
+  }, [searchToggle]);
+  function filterStatus() {
+    setSearchToggle(!searchToggle);
+    searchBarContainerEl?.classList.toggle("active");
+  }
 
   return (
     <div className="filter-input">
@@ -41,6 +31,7 @@ export default function PlayersTableFilter({
           src="https://cdn4.iconfinder.com/data/icons/evil-icons-user-interface/64/magnifier-512.png"
           alt="magnifier"
           className="magnifier"
+          onClick={filterStatus}
         />
         <input
           type="text"
@@ -49,6 +40,7 @@ export default function PlayersTableFilter({
           value={value || ""}
           onChange={onChange}
           placeholder="Search for player"
+          disabled={!searchToggle}
         />
       </div>
     </div>

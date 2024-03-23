@@ -72,14 +72,13 @@
 
 // Buttons
 .simple-button {
-  background: transparent;
   color: black;
   font-size: inherit;
   font-family: inherit;
   border: 0;
   opacity: 0.6;
   transition: 0.3s all;
-  padding: 0;
+  padding: 10px;
   cursor: pointer;
 
   &:disabled {

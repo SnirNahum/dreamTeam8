@@ -13,12 +13,12 @@
     max-width: 94%;
     padding: 0;
   }
-  .app-header-links a,
-  .app-header-links {
+  .nav-item a,
+  .nav-item {
     display: none;
-    &:last-child {
-      display: none;
-    }
+  }
+  .active {
+    background-color: #373a47;
   }
   .card-grid {
     grid-template-columns: repeat(2, 160px);

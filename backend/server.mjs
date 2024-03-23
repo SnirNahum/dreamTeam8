@@ -13,16 +13,17 @@ app.use(express.json());
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.resolve("public")));
-  ("https://dreamteam-1.onrender.com/");
+  ("https://dreamteam-yidh.onrender.com/");
 } else {
   const corsOptions = {
     origin: [
       "http://127.0.0.1:5173",
       "http://localhost:5173",
       "http://localhost:3030",
+      "http://10.100.102.7:5173/",
+      "http://10.100.102.7:5173",
       "http://127.0.0.1:3030",
-      "https://dreamteam-1.onrender.com",
-      "https://dreamteam-1.onrender.com/",
+      "https://dreamteam-yidh.onrender.com/",
     ],
     credentials: true,
   };
@@ -40,7 +41,6 @@ setupSocketAPI(server);
 app.get("/**", (req, res) => {
   res.sendFile(path.resolve("public/index.html"));
 });
-console.log(process.env.NODE_ENV);
 
 import { logger } from "./services/logger.service.js";
 const port = process.env.PORT || 3030;

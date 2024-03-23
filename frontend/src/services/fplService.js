@@ -11,7 +11,6 @@ async function loadGeneralInfo() {
   return generaInfo;
 }
 async function loadPlayerInfo(playerId) {
-  console.log(playerId);
   const playerInfo = await httpService.get("playerInfo", { playerId });
   return playerInfo;
 }

@@ -1,5 +1,4 @@
 import { NavLink, useLocation } from "react-router-dom";
-import AppHeaderResponsive from "./AppHeaderResponsive";
 
 export default function AppHeader() {
   const location = useLocation();
@@ -7,9 +6,15 @@ export default function AppHeader() {
   return (
     <header className="app-header full flex">
       <NavLink to="/">
-        <h1 className="logo">Dream-team</h1>
+        {/* <h1 className="logo">Dream-team</h1>
+         */}
+        <img
+          className="logo"
+          src="https://res.cloudinary.com/datldedpm/image/upload/v1695843176/yxkaoiebiwcvvw54ux6v.png"
+          alt=""
+        />
       </NavLink>
-      <nav className="app-header-links">
+      <nav className="nav-item">
         <NavLink to="/" className={location.pathname === "/" ? "active" : ""}>
           Dashboard
         </NavLink>
@@ -33,7 +38,8 @@ export default function AppHeader() {
         </NavLink>
       </nav>
       <section>
-        <AppHeaderResponsive />
+        {/* <AppHeaderResponsive /> */}
+        {/* <MobileAppHeader /> */}
       </section>
     </header>
   );

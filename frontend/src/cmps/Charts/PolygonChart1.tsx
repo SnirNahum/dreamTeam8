@@ -5,46 +5,6 @@ const PolygonChart1 = ({ player1, player2 }: any) => {
   const [chartData, setChartData] = useState({
     series: [],
     options: {
-      chart: {
-        toolbar: {
-          width: "20px",
-          height: "50",
-          show: true,
-          offsetX: 0,
-          offsetY: 0,
-          tools: {
-            download: true,
-            selection: true,
-            zoom: true,
-            zoomin: true,
-            zoomout: true,
-            pan: true,
-            reset: true | '<img src="/static/icons/reset.png" width="20">',
-            customIcons: [],
-          },
-          export: {
-            csv: {
-              filename: undefined,
-              columnDelimiter: ",",
-              headerCategory: "category",
-              headerValue: "value",
-              dateFormatter(timestamp) {
-                return new Date(timestamp).toDateString();
-              },
-            },
-            svg: {
-              filename: undefined,
-            },
-            png: {
-              filename: undefined,
-            },
-          },
-          autoSelected: "zoom",
-        },
-      },
-      dataLabels: {
-        enabled: false,
-      },
       title: {
         text: "Expected Stats",
         align: "center",
@@ -70,9 +30,9 @@ const PolygonChart1 = ({ player1, player2 }: any) => {
       },
       colors: ["#fee22c", "#a31751"],
       markers: {
-        size: 4,
+        size: 5,
         hover: {
-          size: 10,
+          size: 8,
         },
       },
       tooltip: {
@@ -84,12 +44,11 @@ const PolygonChart1 = ({ player1, player2 }: any) => {
       },
       xaxis: {
         categories: ["ict_index", "influence", "creativity", "threat"],
-        labels: { rotate: 90 },
+        labels: { rotate: 180 },
       },
       yaxis: {
-        tickAmount: 6,
+        tickAmount: 4,
         labels: {
-          // minWidth: 50,
           formatter: function (val: any, i: number) {
             if (i % 2 === 0) {
               return val;
@@ -110,26 +69,24 @@ const PolygonChart1 = ({ player1, player2 }: any) => {
     });
   }, [player1, player2]);
 
-  // Function to generate series data based on player props
   const generateSeriesData = (player1, player2) => {
-    // Implement your logic to generate series data based on player props
     const seriesData = [
       {
         name: player1.web_name,
         data: [
-          player1.ict_index / 10,
-          player1.influence / 10,
-          player1.creativity / 10,
-          player1.threat / 10,
+          player1.ict_index,
+          player1.influence,
+          player1.creativity,
+          player1.threat,
         ],
       },
       {
         name: player2.web_name,
         data: [
-          player2.ict_index / 10,
-          player2.influence / 10,
-          player2.creativity / 10,
-          player2.threat / 10,
+          player2.ict_index,
+          player2.influence,
+          player2.creativity,
+          player2.threat,
         ],
       },
     ];

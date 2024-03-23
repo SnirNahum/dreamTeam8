@@ -10,6 +10,7 @@
 @import "basics/base";
 @import "basics/helpers";
 @import "basics/layout";
+
 // @import "basics/modals";
 @import "basics/animations";
 
@@ -18,19 +19,23 @@
 
 // CMPS
 @import "./cmps/AppHeader.scss";
-@import "./cmps/Teams.scss";
+@import "./cmps/ResponsiveMenu.scss";
+
 @import "./cmps/DashboardList.scss";
+
+@import "./cmps/player/SearchBar.scss";
 @import "./cmps/player/PlayerPreview.scss";
 @import "./cmps/player/PlayerStats.scss";
 @import "./cmps/player/PlayerBio.scss";
 @import "./cmps/player/PlayerModal.scss";
 @import "./cmps/player/FutureMatch.scss";
 
-@import "./cmps/skeleton.scss";
-@import "./cmps/player/SearchBar.scss";
-
-@import "./cmps/ResponsiveMenu.scss";
+@import "./cmps/Teams/Teams.scss";
+@import "./cmps/Teams/Team.scss";
 
 @import "./cmps/Head2Head.scss";
+
+@import "./cmps/skeleton.scss";
+
 // MQ
 @import "./mq/mobile.scss";
