@@ -27,7 +27,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(cors(corsOptions));
 }
 
-import { fplRoutes } from "./api/fpl/fpl.routes.js";
+import { fplRoutes } from "./fpl.routes";
 
 // routes
 
