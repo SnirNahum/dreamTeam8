@@ -2,7 +2,7 @@ import Axios from "axios";
 
 // Define the BASE_URL based on the environment
 const BASE_URL = process.env.NODE_ENV === "production"
-  ? 'https://dreamteam-1.onrender.com/api/'
+  ? '/api/'
   : 'http://localhost:3030/api/';
 
 const axios = Axios.create({
