@@ -4,6 +4,9 @@ import cors from "cors";
 import express from "express";
 import cookieParser from "cookie-parser";
 
+// Import fplRoutes before using it in the Express app
+import { fplRoutes } from "./api/fpl/fpl.routes.js";
+
 const app = express();
 const server = http.createServer(app);
 
@@ -35,9 +38,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(cors(corsOptions));
 }
 
-import { fplRoutes } from "./api/fpl/fpl.routes.js";
-
-// routes
+// Define routes after importing fplRoutes
 app.use("/api", fplRoutes);
 
 app.get("/**", (req, res) => {
