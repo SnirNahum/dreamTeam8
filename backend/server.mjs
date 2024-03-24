@@ -39,6 +39,8 @@ app.get("/**", (req, res) => {
   res.sendFile(path.resolve("public/index.html"));
 });
 
-const port = process.env.PORT || 3030;
-server.listen(port, () => {
+const PORT = process.env.PORT || 10000;
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`);
 });
