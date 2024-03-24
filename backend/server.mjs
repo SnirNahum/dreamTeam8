@@ -15,7 +15,7 @@ app.use(cookieParser());
 app.use(express.json());
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.resolve("public")));
+  app.use(express.static(path.resolve("/public")));
   app.use(cors({
     origin: "https://dreamteam-1.onrender.com",
     credentials: true,
