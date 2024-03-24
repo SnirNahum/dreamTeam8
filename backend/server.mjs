@@ -1,46 +1,54 @@
-import http from "http";
-import path from "path";
-import cors from "cors";
-import express from "express";
-import cookieParser from "cookie-parser";
+import Axios from "axios";
 
-// Import fplRoutes before using it in the Express app
-import { fplRoutes } from "./api/fpl/fpl.routes.js";
+// Base URL for backend API
+const BASE_URL = "https://dreamteam-1.onrender.com/api/";
 
-const app = express();
-const server = http.createServer(app);
-
-// Express App Config
-app.use(cookieParser());
-app.use(express.json());
-
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.resolve("public")));
-  app.use(cors({
-    origin: "https://dreamteam-1.onrender.com",
-    credentials: true,
-  }));
-}
-else {
-  const corsOptions = {
-    origin: [
-      "https://dreamteam-1.onrender.com",
-
-    ],
-    credentials: true,
-  };
-  app.use(cors(corsOptions));
-}
-
-// Define routes after importing fplRoutes
-app.use("/api", fplRoutes);
-
-app.get("/**", (req, res) => {
-  res.sendFile(path.resolve("public/index.html"));
+// Axios instance with credentials enabled
+const axios = Axios.create({
+  withCredentials: true,
 });
 
-const PORT = process.env.PORT || 10000;
+// HTTP service object with methods for making requests
+export const httpService = {
+  async get(endpoint, data) {
+    return ajax(endpoint, "GET", data);
+  },
+  async post(endpoint, data) {
+    return ajax(endpoint, "POST", data);
+  },
+  async put(endpoint, data) {
+    return ajax(endpoint, "PUT", data);
+  },
+  async delete(endpoint, data) {
+    return ajax(endpoint, "DELETE", data);
+  },
+};
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// Function to make AJAX requests
+async function ajax(endpoint, method = "GET", data = null) {
+  try {
+    const res = await axios({
+      url: `${BASE_URL}${endpoint}`,
+      method,
+      data,
+      params: method === "GET" ? data : null,
+    });
+    return res.data;
+  } catch (err) {
+    console.log(
+      `Had Issues ${method}ing to the backend, endpoint: ${endpoint}, with data:`,
+      data
+    );
+    console.dir(err);
+    if (err.response && err.response.status === 401) {
+      // Handle unauthorized access (e.g., redirect to login)
+      sessionStorage.clear();
+      window.location.assign("/");
+      // Depending on your routing strategy, you may use:
+      // window.location.assign('/#/login')
+      // window.location.assign('/login')
+      // router.push('/login')
+    }
+    throw err;
+  }
+}
