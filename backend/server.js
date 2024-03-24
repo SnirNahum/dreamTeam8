@@ -24,7 +24,7 @@ if (process.env.NODE_ENV === "production") {
 
 } else {
   const corsOptions = {
-    origin: ["http://localhost:10000", "http://localhost:5173", "https://dreamteam-1.onrender.com/", "https://dreamteam-1.onrender.com"],
+    origin: ["http://localhost:10000", "http://localhost:5173", "https://dreamteam-1.onrender.com/", "https://dreamteam-1.onrender.com", "216.24.57.4:443"],
     credentials: true,
   };
   app.use(cors(corsOptions));

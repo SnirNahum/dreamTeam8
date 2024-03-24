@@ -1,7 +1,7 @@
 import Axios from "axios";
 // import { router } from '@/router'
 
-const BASE_URL = "https://dreamteam-1.onrender.com/api/";
+const BASE_URL = "/api/";
 
 const axios = Axios.create({
   withCredentials: true,
