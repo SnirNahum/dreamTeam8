@@ -1,7 +1,8 @@
 import Axios from "axios";
 // import { router } from '@/router'
 
-const BASE_URL = "/api/";
+const BASE_URL =
+  process.env.NODE_ENV === "//production" ? "//localhost:10000/api/" : "//localhost:10000/api/";
 
 const axios = Axios.create({
   withCredentials: true,
