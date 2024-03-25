@@ -21,10 +21,10 @@ app.use(express.json());
 // CORS Configuration based on environment
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.resolve("public")));
-
+  ("https://dreamteam-1.onrender.com/");
 } else {
   const corsOptions = {
-    origin: ["http://localhost:10000", "http://localhost:5173", "https://dreamteam-1.onrender.com/", "https://dreamteam-1.onrender.com", "216.24.57.4:443"],
+    origin: ["http://localhost:10000", "http://localhost:5173", "https://dreamteam-1.onrender.com/", "https://dreamteam-1.onrender.com"],
     credentials: true,
   };
   app.use(cors(corsOptions));
