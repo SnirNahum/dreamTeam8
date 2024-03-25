@@ -12,8 +12,7 @@ app.use(cookieParser());
 app.use(express.json());
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.resolve("public")));
-  ("https://dreamteam-yidh.onrender.com/");
+  app.use(express.static(path.resolve("public"))); // Set up static file serving
 } else {
   const corsOptions = {
     origin: [
@@ -21,15 +20,15 @@ if (process.env.NODE_ENV === "production") {
       "http://localhost:5173",
       "http://localhost:3030",
       "http://127.0.0.1:3030",
-      "https://dreamteam-yidh.onrender.com/",
+      "https://dreamteam-1.onrender.com/",
     ],
     credentials: true,
   };
   app.use(cors(corsOptions));
 }
+console.log("this is the dasdsad----", app.use(express.static(path.resolve("public"))));
 
 import { fplRoutes } from "./api/fpl/fpl.routes.js";
-
 
 app.use("/api", fplRoutes);
 
@@ -39,4 +38,5 @@ app.get("/**", (req, res) => {
 
 const port = process.env.PORT || 3030;
 server.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
