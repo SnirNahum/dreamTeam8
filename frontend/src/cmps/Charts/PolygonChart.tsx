@@ -18,7 +18,7 @@ const PolygonChart = ({ player1, player2 }: any) => {
         style: {
           fontSize: "20px",
           fontWeight: "regular",
-          fontFamily: undefined,
+          fontFamily:'Helvetica',
           color: "brown",
         },
       },
