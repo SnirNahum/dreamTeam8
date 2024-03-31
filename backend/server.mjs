@@ -3,7 +3,7 @@ import path from "path";
 import cors from "cors";
 import express from "express";
 import cookieParser from "cookie-parser";
-
+import { logger } from "./services/logger.service.js";
 const app = express();
 const server = http.createServer(app);
 
@@ -26,7 +26,6 @@ if (process.env.NODE_ENV === "production") {
   };
   app.use(cors(corsOptions));
 }
-console.log("this is the dasdsad----", app.use(express.static(path.resolve("public"))));
 
 import { fplRoutes } from "./api/fpl/fpl.routes.js";
 
@@ -39,4 +38,6 @@ app.get("/**", (req, res) => {
 const port = process.env.PORT || 3030;
 server.listen(port, () => {
   console.log(`Server is running on port ${port}`);
+  logger.info(`Server is running on port ${port}`);
+
 });

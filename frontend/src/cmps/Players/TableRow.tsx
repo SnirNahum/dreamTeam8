@@ -3,11 +3,9 @@ import PlayerPreviewModal from "./PlayerPreviewModal";
 
 export default function TableRow({ row, getPlayer, currPlayer }: any) {
   const [open, setOpen] = useState(false);
-
   const handleOpen = () => {
     setOpen(true);
   };
-
   const handleClose = () => {
     setOpen(false);
   };
@@ -24,8 +22,8 @@ export default function TableRow({ row, getPlayer, currPlayer }: any) {
           {cell.column.id === "selected_by_percent"
             ? `${cell.value}%`
             : cell.column.id === "now_cost" && cell.value !== 0
-            ? `${cell.value / 10}`
-            : cell.render("Cell")}
+              ? `${cell.value / 10}`
+              : cell.render("Cell")}
         </td>
       ))}
       <PlayerPreviewModal

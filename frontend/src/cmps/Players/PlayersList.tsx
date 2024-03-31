@@ -41,9 +41,14 @@ const columns = [
     accessor: "now_cost",
   },
 ];
-function PlayersList({ getPlayer, currPlayer }) {
-  const players = useSelector((state: any) => state.fplModule.players);
+function PlayersList({ getPlayer, currPlayer, teamPlayers }) {
+
+  let players = useSelector((state: any) => state.fplModule.players);
   const [emptyFilter, setEmtpyFilter] = useState("");
+
+  if (teamPlayers) {
+    players = teamPlayers
+  }
 
   function handleChange(ev: any) {
     setGlobalFilter(ev.target.value);

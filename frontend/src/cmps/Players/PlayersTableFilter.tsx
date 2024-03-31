@@ -15,13 +15,16 @@ export default function PlayersTableFilter({
   const searchBarContainerEl = document.querySelector(".search-bar-container");
 
   useEffect(() => {
-    if (searchToggle) {
+    setSearchToggle(!false) 
+    
+    if (searchToggle && !searchBarContainerEl?.classList.contains("active")) {
       inputRef.current?.focus();
     }
   }, [searchToggle]);
   function filterStatus() {
     setSearchToggle(!searchToggle);
     searchBarContainerEl?.classList.toggle("active");
+
   }
 
   return (

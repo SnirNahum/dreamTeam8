@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import Head2Head from "./pages/Head2Head";
 import TeamsPage from "./cmps/Teams/TeamsPage";
 import MobileAppHeader from "./cmps/AppHeader/MobileAppHeader";
+import PlayerPreview from "./cmps/Players/PlayerPreview";
 
 function App() {
   useEffect(() => {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/teams" element={<Teams />} />
           <Route path="/teams/:teamId" element={<TeamsPage />} />
           <Route path="/players" element={<Players />} />
+          <Route path="/players/:playerId" element={<PlayerPreview />} />
           <Route path="/Head2Head" element={<Head2Head />} />
         </Routes>
       </main>
