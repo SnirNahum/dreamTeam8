@@ -12,6 +12,7 @@ app.use(cookieParser());
 app.use(express.json());
 
 if (process.env.NODE_ENV === "production") {
+  logger.info(`process.env.NODE_ENV --- ${process.env.NODE_ENV}`);
   app.use(express.static(path.resolve("public"))); 
 } else {
   const corsOptions = {
@@ -20,13 +21,13 @@ if (process.env.NODE_ENV === "production") {
       "http://localhost:5173",
       "http://localhost:3030",
       "http://127.0.0.1:3030",
-      "https://dreamteam8.onrender.com",
+      "https://dreamteam8.onrender.com/",
     ],
     credentials: true,
   };
   app.use(cors(corsOptions));
 }
-
+logger.info(`process.env.NODE_ENV --- ${process.env.NODE_ENV}`);
 import { fplRoutes } from "./api/fpl/fpl.routes.js";
 
 app.use("/api", fplRoutes);
