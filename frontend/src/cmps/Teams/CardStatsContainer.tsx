@@ -31,6 +31,7 @@ export default function CardStatsContainer({ h2hPlayer1, h2hPlayer2, title }) {
               {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
             </IconButton>
           }
+          style={{ cursor: "pointer" }} // Add this line to change cursor to pointer
         ></CardHeader>
         <div
           style={{
