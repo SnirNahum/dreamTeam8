@@ -12,7 +12,7 @@ app.use(cookieParser());
 app.use(express.json());
 
 if (process.env.NODE_ENV === "production") {
-  logger.info(`process.env.NODE_ENV --- ${process.env.NODE_ENV}`);
+  logger.error(`process.env.NODE_ENV --- ${process.env.NODE_ENV}`);
   app.use(express.static(path.resolve("public"))); 
 } else {
   const corsOptions = {
@@ -27,7 +27,7 @@ if (process.env.NODE_ENV === "production") {
   };
   app.use(cors(corsOptions));
 }
-logger.info(`process.env.NODE_ENV --- ${process.env.NODE_ENV}`);
+logger.error(`process.env.NODE_ENV --- ${process.env.NODE_ENV}`);
 import { fplRoutes } from "./api/fpl/fpl.routes.js";
 
 app.use("/api", fplRoutes);
