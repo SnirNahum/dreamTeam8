@@ -51,12 +51,11 @@ const PolygonChart = ({ player1, player2 }: any) => {
       },
       xaxis: {
         categories: [
-          "Involvment",
-          "Goals",
-          "Points next",
-          "Points now",
-          "Assists",
           "Pts/Per game",
+          "Last game Pts",
+          "Goals scored",
+          "Total Pts.",
+
         ],
         labels: { rotate: 90 },
       },
@@ -91,23 +90,19 @@ const PolygonChart = ({ player1, player2 }: any) => {
       {
         name: player1.web_name,
         data: [
-          player1.expected_goal_involvements_per_90,
-          player1.expected_goals_per_90,
-          player1.ep_next,
-          player1.ep_this,
-          player1.expected_assists_per_90,
           player1.points_per_game,
+          player1.event_points,
+          player1.goals_scored,
+          player1.clean_sheets,
         ],
       },
       {
         name: player2.web_name,
         data: [
-          player2.expected_goal_involvements_per_90,
-          player2.expected_goals_per_90,
-          player2.ep_next,
-          player2.ep_this,
-          player2.expected_assists_per_90,
           player2.points_per_game,
+          player2.event_points,
+          player2.goals_scored,
+          player2.clean_sheets,
         ],
       },
     ];

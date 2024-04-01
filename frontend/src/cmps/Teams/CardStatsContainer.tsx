@@ -5,29 +5,28 @@ import CardContent from "@mui/material/CardContent";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import IconButton from "@mui/material/IconButton";
-import TeamLeaderboards from "./TeamLeaderboards";
 import { useState } from "react";
+import CardStats from "./CardStats";
 
-export default function PointsLeaderBoards({ teamPlayers }) {
+export default function CardStatsContainer({ h2hPlayer1, h2hPlayer2, title }) {
   const [open, setOpen] = useState(false);
 
   return (
     <div>
       <Card
         sx={{
-          minWidth: 330,
-          border: "1px solid rgba(211,211,211,0.6)",
-          margin: 2,
+          border: "0.5px solid rgba(255,255,255.2)",
+          margin: 0,
         }}
       >
         <CardHeader
-          title="Team Leaderboard"
+          onClick={() => setOpen(!open)}
+          title={title}
           align="center"
           action={
             <IconButton
-              onClick={() => setOpen(!open)}
               aria-label="expand"
-              size="medium"
+              size="large"
             >
               {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
             </IconButton>
@@ -40,7 +39,7 @@ export default function PointsLeaderBoards({ teamPlayers }) {
         >
           <Collapse in={open} timeout="auto" unmountOnExit>
             <CardContent>
-              <TeamLeaderboards teamPlayers={teamPlayers} />
+              <CardStats h2hPlayer1={h2hPlayer1} h2hPlayer2={h2hPlayer2} title={title} />
             </CardContent>
           </Collapse>
         </div>

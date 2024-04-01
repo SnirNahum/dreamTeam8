@@ -1,13 +1,11 @@
 import Head2HeaderPlayer1 from "../cmps/Head2Head/Head2HeaderPlayer1";
 import Head2HeaderPlayer2 from "../cmps/Head2Head/Head2HeaderPlayer2";
-// import { setPlayerH2H } from "../store/actions/generalInfo.actions";
-import PolygonChart from "../cmps/Charts/PolygonChart";
 import { useEffect, useState } from "react";
 import PlayersList from "../cmps/Players/PlayersList";
 import { useSelector } from "react-redux";
 import { setPlayer1 } from "../store/actions/generalInfo.actions";
 import { setPlayer2 } from "../store/actions/generalInfo.actions";
-import PolygonChart1 from "../cmps/Charts/PolygonChart1";
+import CardStatsContainer from "../cmps/Teams/CardStatsContainer";
 
 export default function Head2Head() {
   const [searchMode, inSearchMode] = useState(false);
@@ -65,16 +63,27 @@ export default function Head2Head() {
         <div className="player-card-container">
           <Head2HeaderPlayer1 player={h2hPlayer1} />
           <Head2HeaderPlayer2 player={h2hPlayer2} />
+
         </div>
       )}
       {h2hPlayer1 !== null &&
-      Object.keys(h2hPlayer1).length !== 0 &&
-      h2hPlayer2 !== null &&
-      Object.keys(h2hPlayer2).length !== 0 ? (
+        Object.keys(h2hPlayer1).length !== 0 &&
+        h2hPlayer2 !== null &&
+        Object.keys(h2hPlayer2).length !== 0 ? (
         <>
-          <PolygonChart player1={h2hPlayer1} player2={h2hPlayer2} />
-          <PolygonChart1 player1={h2hPlayer1} player2={h2hPlayer2} />
+          {!searchMode && (
+            <>
+              <CardStatsContainer h2hPlayer1={h2hPlayer1} h2hPlayer2={h2hPlayer2} title={'Overview'}/>
+              <CardStatsContainer h2hPlayer1={h2hPlayer1} h2hPlayer2={h2hPlayer2} title={'Attacking'}/>
+              <CardStatsContainer h2hPlayer1={h2hPlayer1} h2hPlayer2={h2hPlayer2} title={'Defending'}/>
+              <CardStatsContainer h2hPlayer1={h2hPlayer1} h2hPlayer2={h2hPlayer2} title={'Goalkeeping'}/>
+              <CardStatsContainer h2hPlayer1={h2hPlayer1} h2hPlayer2={h2hPlayer2} title={'Matches'}/>
+              <CardStatsContainer h2hPlayer1={h2hPlayer1} h2hPlayer2={h2hPlayer2} title={'Stats'}/>
+            </>
+          )}
         </>
+
+
       ) : (
         <div></div>
       )}

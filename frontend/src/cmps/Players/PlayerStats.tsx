@@ -17,7 +17,7 @@ export default function PlayerStats({ player }: PlayerProps) {
           </li>
           <li>
             <p>Pts/Match</p>
-            <h3>{player.ep_this}</h3>
+            <h3>{player.points_per_game}</h3>
             <p className="player-ranks">{`${player.points_per_game_rank_type} of ${player.position_rank}*`}</p>
           </li>
           <li>

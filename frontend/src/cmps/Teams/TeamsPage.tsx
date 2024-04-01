@@ -17,9 +17,9 @@ export default function TeamsPage() {
   }, [teamId, teams, players]);
   
   return (
-    <div className="TeamPage">
-      {/* <PointsLeaderBoards teamPlayers={teamPlayers} />
-      <TeamTable teamPlayers={teamPlayers} /> */}
+    <div className="player-list">
+     
+      {/* <TeamTable teamPlayers={teamPlayers} /> */}
       <PlayersList teamPlayers={teamPlayers} />
     </div>
   );

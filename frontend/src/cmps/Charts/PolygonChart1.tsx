@@ -6,7 +6,7 @@ const PolygonChart1 = ({ player1, player2 }: any) => {
     series: [],
     options: {
       title: {
-        text: "Expected Stats",
+        text: "Overview",
         align: "center",
         style: {
           fontSize: "15px",
@@ -43,7 +43,7 @@ const PolygonChart1 = ({ player1, player2 }: any) => {
         },
       },
       xaxis: {
-        categories: ["ict_index", "influence", "creativity", "threat"],
+        categories: ["Goals", "Yellow cards","Clean sheets","Assists"],
         labels: { rotate: 180 },
       },
       yaxis: {
@@ -74,19 +74,19 @@ const PolygonChart1 = ({ player1, player2 }: any) => {
       {
         name: player1.web_name,
         data: [
-          player1.ict_index,
-          player1.influence,
-          player1.creativity,
-          player1.threat,
+          player1.goals_scored,
+          player1.yellow_cards,
+          player1.clean_sheets,
+          player1.assists,
         ],
       },
       {
         name: player2.web_name,
         data: [
-          player2.ict_index,
-          player2.influence,
-          player2.creativity,
-          player2.threat,
+          player2.goals_scored,
+          player2.yellow_cards,
+          player2.clean_sheets,
+          player2.assists,
         ],
       },
     ];

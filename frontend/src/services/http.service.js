@@ -1,7 +1,7 @@
 import Axios from "axios";
 // import { router } from '@/router'
 
-const BASE_URL ="/api/";
+const BASE_URL ="http://localhost:3030/api/";
 
 const axios = Axios.create({
   withCredentials: true,
