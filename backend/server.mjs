@@ -11,25 +11,24 @@ const server = http.createServer(app);
 app.use(cookieParser());
 app.use(express.json());
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.resolve("public"))); 
-} else {
-  const corsOptions = {
-    origin: [
-      "http://127.0.0.1:5173",
-      "http://localhost:5173",
-      "http://localhost:3030",
-      "http://127.0.0.1:3030",
-      "https://dreamteam8.onrender.com",
-    ],
-    credentials: true,
-  };
-  app.use(cors(corsOptions));
-}
+
+
+const corsOptions = {
+  origin: [
+    "http://127.0.0.1:5173",
+    "http://localhost:5173",
+    "http://localhost:3030",
+    "http://127.0.0.1:3030",
+    "https://dreamteam8.onrender.com",
+  ],
+  credentials: true,
+};
+app.use(cors(corsOptions));
+
 
 import { fplRoutes } from "./api/fpl/fpl.routes.js";
 
-app.use("/api", fplRoutes);
+app.use("/api/", fplRoutes);
 
 app.get("/**", (req, res) => {
   res.sendFile(path.resolve("public/index.html"));
