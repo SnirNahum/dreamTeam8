@@ -17,15 +17,17 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   console.log("if == true: ", process.env.NODE_ENV);
   app.use(express.static(path.resolve("public")));
-  ("https://dreamteam8-1.onrender.com/");
+  ("https://dreamteam8-1.onrender.com");
 } else {
   console.log("if == false: ", process.env.NODE_ENV);
   const corsOptions = {
     origin: [
-      "http://127.0.0.1",
-      "http://localhost",
+      "http://127.0.0.1:5173",
+      "http://127.0.0.1:3030",
       "http://localhost:5173",
-      "http://192.168.8.79",
+      "http://localhost:3030",
+      "http://0.0.0.0:3030",
+      "http://0.0.0.0",
       "https://dreamteam8-1.onrender.com",
       "https://dreamteam8-1.onrender.com/",
     ],
@@ -49,8 +51,8 @@ app.use((err, req, res, next) => {
 });
 
 // Server configuration
-const port = process.env.PORT || 10000; // Use environment variable if available
-server.listen(port, '0.0.0.0', () => {
+const port = process.env.PORT || 3030; // Use environment variable if available
+server.listen(port, () => {
   console.log(`Server is running on port ${port}`);
   logger.info(`Server is running on port ${port}`);
 });
