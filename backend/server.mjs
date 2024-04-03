@@ -14,7 +14,7 @@ app.use(express.json());
 
 if (process.env.NODE_ENV === "production") {
   logger.error(`process.env.NODE_ENV --- ${process.env.NODE_ENV}`);
-  app.use(express.static(("public/dist")));
+  app.use(express.static(("public")));
 } else {
   const corsOptions = {
     origin: [
@@ -25,9 +25,6 @@ if (process.env.NODE_ENV === "production") {
       "http://3.125.183.140",
       "http://3.75.158.163",
       "http://35.157.117.28",
-      "http://3.125.183.140:*",
-      "http://3.75.158.163:*",
-      "http://35.157.117.28:*",
       "https://dreamteam8.onrender.com/",
     ],
     credentials: true,
