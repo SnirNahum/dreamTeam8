@@ -63,3 +63,11 @@ export async function getPlayerInfo(req, res) {
     res.status(400).send({ err: `Failed to get player ${req.query.playerId}` });
   }
 }
+export async function gettesting(req, res) {
+  try {
+    res.send("working");
+  } catch (err) {
+    logger.error("Failed to get players", err);
+    res.status(400).send({ err: `Failed to get player ${req.query.playerId}` });
+  }
+}
