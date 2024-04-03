@@ -1,14 +1,15 @@
 import Axios from "axios";
 // import { router } from '@/router'
 
-const BASE_URL = '/api/'
+const BASE_URL =
+  process.env.NODE_ENV === "production" ? "/api/" : "//localhost:3030/api/";
+
 const axios = Axios.create({
   withCredentials: true,
 });
 
 export const httpService = {
   get(endpoint, data) {
-    console.log("ssdsds:", process.env.NODE_ENV);
     return ajax(endpoint, "GET", data);
   },
   post(endpoint, data) {
@@ -40,6 +41,10 @@ async function ajax(endpoint, method = "GET", data = null) {
     if (err.response && err.response.status === 401) {
       sessionStorage.clear();
       window.location.assign("/");
+      // Depends on routing startegy - hash or history
+      // window.location.assign('/#/login')
+      // window.location.assign('/login')
+      // router.push('/login')
     }
     throw err;
   }
