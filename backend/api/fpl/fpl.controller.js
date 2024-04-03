@@ -12,30 +12,42 @@ import { logger } from "../../services/logger.service.js";
 //   }
 
 // }
+const MAX_RETRIES = 3; // Maximum number of retries
+const INITIAL_DELAY = 1000; // Initial delay before the first retry in milliseconds
+
 export async function getGeneralInfo(req, res) {
-  try {
-    const TIMEOUT_DELAY = 15000;
-    let timeoutReached = false;
+  let retryCount = 0;
 
-    const timeout = setTimeout(() => {
-      timeoutReached = true;
-      logger.error("Timeout reached while waiting for general info");
-      res
-        .status(500)
-        .send({ err: "Timeout reached while waiting for general info" });
-    }, TIMEOUT_DELAY);
-
-    const generalInfo = await fplService.GeneralInfo();
-    clearTimeout(timeout);
-
-    if (!timeoutReached) {
+  const retry = async () => {
+    try {
+      const generalInfo = await fplService.GeneralInfo();
       logger.info("General Info loaded successfully");
       res.json(generalInfo);
+    } catch (err) {
+      if (retryCount < MAX_RETRIES) {
+        // Increment the retry count
+        retryCount++;
+
+        // Calculate the delay for the next retry using exponential backoff
+        const delay = INITIAL_DELAY * Math.pow(2, retryCount);
+
+        // Log the retry attempt
+        logger.warn(`Retry attempt ${retryCount}. Retrying in ${delay} ms`);
+
+        // Wait for the delay before retrying
+        setTimeout(retry, delay);
+      } else {
+        // Maximum retries reached, log error and send response
+        logger.error("Failed to get general info after maximum retries", err);
+        res
+          .status(500)
+          .send({ err: "Failed to get general info after maximum retries" });
+      }
     }
-  } catch (err) {
-    logger.error("Failed to get general info", err);
-    res.status(400).send({ err: "Failed to get general info" });
-  }
+  };
+
+  // Start the first attempt
+  retry();
 }
 
 export async function getPlayerInfo(req, res) {
