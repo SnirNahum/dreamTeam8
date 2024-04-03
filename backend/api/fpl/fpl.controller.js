@@ -1,16 +1,43 @@
 import { fplService } from "./fpl.service.js";
 import { logger } from "../../services/logger.service.js";
 
+// export async function getGeneralInfo(req, res) {
+//   try {
+//     const generalInfo = await fplService.GeneralInfo();
+//     logger.info("General Info loaded successfully");
+//     res.json(generalInfo);
+//   } catch (err) {
+//     logger.error("Failed to get general info", err);
+//     res.status(400).send({ err: "Failed to get general info" });
+//   }
+
+// }
 export async function getGeneralInfo(req, res) {
   try {
+    const TIMEOUT_DELAY = 15000;
+    let timeoutReached = false;
+
+    const timeout = setTimeout(() => {
+      timeoutReached = true;
+      logger.error("Timeout reached while waiting for general info");
+      res
+        .status(500)
+        .send({ err: "Timeout reached while waiting for general info" });
+    }, TIMEOUT_DELAY);
+
     const generalInfo = await fplService.GeneralInfo();
-    logger.info("General Info loaded successfully");
-    res.json(generalInfo);
+    clearTimeout(timeout);
+
+    if (!timeoutReached) {
+      logger.info("General Info loaded successfully");
+      res.json(generalInfo);
+    }
   } catch (err) {
     logger.error("Failed to get general info", err);
     res.status(400).send({ err: "Failed to get general info" });
   }
 }
+
 export async function getPlayerInfo(req, res) {
   try {
     const playerId = req.query.playerId;
