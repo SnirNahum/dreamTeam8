@@ -26,8 +26,6 @@ if (process.env.NODE_ENV === "production") {
       "http://127.0.0.1:3030",
       "http://localhost:5173",
       "http://localhost:3030",
-      "http://0.0.0.0:3030",
-      "http://0.0.0.0",
       "https://dreamteam8-1.onrender.com",
       "https://dreamteam8-1.onrender.com/",
     ],
