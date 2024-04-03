@@ -14,6 +14,8 @@ export async function getGeneralInfo(req, res) {
 export async function getPlayerInfo(req, res) {
   try {
     const playerId = req.query.playerId;
+    console.log("req.query: ", req.query);
+    console.log("playerId: ", playerId);
     const playerInfo = await fplService.PlayerInfo(playerId);
     logger.info(`Player Info ${req.query.playerId} loaded successfully`);
     res.json(playerInfo);

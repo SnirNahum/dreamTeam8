@@ -3,8 +3,10 @@ import { logger } from "../../services/logger.service.js";
 
 async function GeneralInfo() {
   try {
+    console.log("work");
     const BASE_URL = "https://fantasy.premierleague.com/api/";
     const response = await axios.get(`${BASE_URL}bootstrap-static`);
+    console.log("response: ", response);
     return response.data;
   } catch (err) {
     logger.error("cannot find generalInfo", err);
