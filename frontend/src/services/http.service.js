@@ -1,7 +1,6 @@
 import Axios from "axios";
 // import { router } from '@/router'
 
-console.log('process.env: ', process.env);
 const BASE_URL = '/api/'
 const axios = Axios.create({
   withCredentials: true,
@@ -9,6 +8,7 @@ const axios = Axios.create({
 
 export const httpService = {
   get(endpoint, data) {
+    console.log("ssdsds:", process.env.NODE_ENV);
     return ajax(endpoint, "GET", data);
   },
   post(endpoint, data) {
