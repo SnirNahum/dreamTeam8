@@ -16,7 +16,8 @@ app.use(express.json());
 // CORS Configuration
 if (process.env.NODE_ENV === "production") {
   console.log(process.env.NODE_ENV);
-  app.use("https://dreamteam8-1.onrender.com");
+  app.use(express.static(path.resolve("public")));
+  ("https://dreamteam8-1.onrender.com/");
 } else {
   console.log(process.env.NODE_ENV);
   const corsOptions = {
