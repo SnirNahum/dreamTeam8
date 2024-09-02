@@ -11,6 +11,8 @@ export default function PlayerPreview({ player, getPlayer, currPlayer }: any) {
   useEffect(() => {
     loadPlayer(player.id);
     updateH2HPlayer(player);
+    console.log(player);
+    
   }, [player.id]);
 
   async function loadPlayer(playerId: number) {

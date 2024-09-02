@@ -12,6 +12,7 @@ function FutureMatchesList() {
   const [fixtureInfo, setfixtureInfo] = useState([]);
 
   useEffect(() => {
+    
     if (playerFixtures.length > 0 && teams.length > 0) {
       setfixtureInfo(playerFixtures.slice(0, 3));
       const playerTeamIds = playerFixtures

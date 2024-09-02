@@ -36,7 +36,7 @@ export default function Head2HeaderPlayer2({ player }: any) {
                   {player.selected_by_percent + "%"}
                 </p>
               </div>
-              <img className="ddd" src={`${getTeamImg(player.team_code)}`} />
+              <img className="team-img" src={`${getTeamImg(player.team_code)}`} />
             </div>
           </div>
         </div>

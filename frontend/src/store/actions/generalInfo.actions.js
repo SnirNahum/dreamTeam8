@@ -30,13 +30,6 @@ export async function loadPlayerInfo(playerId) {
     const playerHistory = playerInfo.history;
     const playerHistoryPast = playerInfo.history_past;
 
-    playerFixtures.forEach((fixture, index) => {
-      if (fixture.is_home) {
-        playerFixtures[index]["rival_team"] = fixture.team_a;
-      } else {
-        playerFixtures[index]["rival_team"] = fixture.team_h;
-      }
-    });
     const action = {
       type: SET_PLAYERINFO,
       playerInfo,

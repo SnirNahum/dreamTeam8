@@ -24,7 +24,7 @@ export default function PastMatchesList() {
     }
     setTimeout(() => {
       setIsLoading(false);
-    }, 700);
+    }, 1500);
   }, [playerHistory]);
 
   return (

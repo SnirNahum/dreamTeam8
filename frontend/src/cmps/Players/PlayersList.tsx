@@ -14,7 +14,6 @@ import PlayersTableFilter from "./PlayersTableFilter";
 import PtsFilter from "./PtsFilter";
 import "../../assets/scss/mq/mobile.scss";
 import { useState } from "react";
-
 const columns = [
   {
     Header: "Name",

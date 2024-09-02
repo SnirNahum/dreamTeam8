@@ -1,7 +1,9 @@
 import { getTeamImg } from "../../services/utilService";
 
 export default function Head2HeaderPlayer1({ player }: any) {
+
   return (
+
     <div className="player-card-container">
       {player !== null && Object.keys(player).length !== 0 ? (
         <div
@@ -36,7 +38,7 @@ export default function Head2HeaderPlayer1({ player }: any) {
                   {player.selected_by_percent + "%"}
                 </p>
               </div>
-              <img className="ddd" src={`${getTeamImg(player.team_code)}`} />
+              <img className="team-img" src={`${getTeamImg(player.team_code)}`} />
             </div>
           </div>
         </div>
@@ -48,6 +50,7 @@ export default function Head2HeaderPlayer1({ player }: any) {
           }}
         ></div>
       )}
+
     </div>
   );
 }

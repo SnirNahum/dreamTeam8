@@ -63,7 +63,6 @@ export default function Head2Head() {
         <div className="player-card-container">
           <Head2HeaderPlayer1 player={h2hPlayer1} />
           <Head2HeaderPlayer2 player={h2hPlayer2} />
-
         </div>
       )}
       {h2hPlayer1 !== null &&
@@ -73,12 +72,12 @@ export default function Head2Head() {
         <>
           {!searchMode && (
             <>
-              <CardStatsContainer h2hPlayer1={h2hPlayer1} h2hPlayer2={h2hPlayer2} title={'Overview'}/>
-              <CardStatsContainer h2hPlayer1={h2hPlayer1} h2hPlayer2={h2hPlayer2} title={'Attacking'}/>
-              <CardStatsContainer h2hPlayer1={h2hPlayer1} h2hPlayer2={h2hPlayer2} title={'Defending'}/>
-              <CardStatsContainer h2hPlayer1={h2hPlayer1} h2hPlayer2={h2hPlayer2} title={'Goalkeeping'}/>
-              <CardStatsContainer h2hPlayer1={h2hPlayer1} h2hPlayer2={h2hPlayer2} title={'Matches'}/>
-              <CardStatsContainer h2hPlayer1={h2hPlayer1} h2hPlayer2={h2hPlayer2} title={'Stats'}/>
+              <CardStatsContainer h2hPlayer1={h2hPlayer1} h2hPlayer2={h2hPlayer2} title={'Overview'} />
+              <CardStatsContainer h2hPlayer1={h2hPlayer1} h2hPlayer2={h2hPlayer2} title={'Attacking'} />
+              <CardStatsContainer h2hPlayer1={h2hPlayer1} h2hPlayer2={h2hPlayer2} title={'Defending'} />
+              <CardStatsContainer h2hPlayer1={h2hPlayer1} h2hPlayer2={h2hPlayer2} title={'Goalkeeping'} />
+              <CardStatsContainer h2hPlayer1={h2hPlayer1} h2hPlayer2={h2hPlayer2} title={'Matches'} />
+              <CardStatsContainer h2hPlayer1={h2hPlayer1} h2hPlayer2={h2hPlayer2} title={'Stats'} />
             </>
           )}
         </>
