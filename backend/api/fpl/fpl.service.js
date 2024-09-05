@@ -31,7 +31,6 @@ async function PlayerInfo(playerId) {
       },
     });
     getRivalTeam(response.data.fixtures)
-    getPrediction1(response.data)
     return response.data
   } catch (err) {
     logger.error("cannot find PlayerInfo", err);
