@@ -12,10 +12,10 @@ export default function Head2Head() {
   const [h2hPlayer1, setH2HPlayer1] = useState(null);
   const [h2hPlayer2, setH2HPlayer2] = useState(null);
   const [currPlayer, SetCurrPlayer] = useState(0);
-  
+
   const player1H2H = useSelector((state) => state.fplModule.player1);
   const player2H2H = useSelector((state) => state.fplModule.player2);
-  
+
   useEffect(() => {
     savePlayersState();
     if (player1H2H) {
@@ -31,7 +31,8 @@ export default function Head2Head() {
       setH2HPlayer1(player);
       inSearchMode(!searchMode);
       await setPlayer1(player);
-    } else if (currPlayer === 1) {
+    } 
+    else if (currPlayer === 1) {
       inSearchMode(!searchMode);
       await setPlayer2(player);
       setH2HPlayer2(player);
@@ -40,7 +41,6 @@ export default function Head2Head() {
   async function savePlayersState() {
     await setPlayer1(h2hPlayer1);
     await setPlayer2(h2hPlayer2);
-
   }
   function ChangePlayer1() {
     inSearchMode(!searchMode);

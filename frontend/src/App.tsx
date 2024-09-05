@@ -23,21 +23,17 @@ function App() {
 
       <main>
         <Routes>
-          {/* Root route */}
           <Route path="/" element={<Dashboard />} />
-          {/* Teams route with nested PlayersList */}
           <Route path="/teams" element={<Teams />} />
           <Route path="/teams/:teamId" element={<TeamsPage />}>
             <Route path=":playerId" element={<PlayersList />}></Route>
           </Route>
-          {/* Players route with nested PlayerDetail */}
           <Route path="/players" element={<Players />}>
             <Route path=":id" element={<PlayersList />} />
           </Route>
           <Route path="/Head2Head/" element={<Head2Head />}>
-            <Route path=":id" element={<Head2Head />}/>
+            <Route path=":id" element={<Head2Head />} />
           </Route>
-          {/* Default route for unmatched paths */}
           <Route path="*" element={<Dashboard />} />
         </Routes>
       </main>
