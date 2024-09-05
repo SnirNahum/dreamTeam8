@@ -20,6 +20,7 @@ export default function Head2Head() {
     savePlayersState();
     if (player1H2H) {
       setH2HPlayer1(player1H2H);
+      
     }
     if (player2H2H) {
       setH2HPlayer2(player2H2H);
@@ -44,6 +45,7 @@ export default function Head2Head() {
   function ChangePlayer1() {
     inSearchMode(!searchMode);
     SetCurrPlayer(0);
+
   }
 
   function ChangePlayer2() {

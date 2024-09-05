@@ -7,7 +7,7 @@ export default function PlayerPreviewModal({
   open,
   handleClose,
   getPlayer,
-  currPlayer,
+  currPlayer
 }: any) {
   return (
     <Modal
@@ -16,7 +16,8 @@ export default function PlayerPreviewModal({
       onClose={handleClose}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
-    >
+      >
+      
       <Box className="modal-content">
         <div className="modal-close-btn" onClick={handleClose}>
           <CheckIcon />

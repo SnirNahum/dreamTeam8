@@ -1,6 +1,7 @@
 import { getTeamImg } from "../../services/utilService";
 
 export default function PastMatchesPreview({ pastMatches, team }: any) {
+
   return (
     <div className="future-match-card">
       <p>{`GW${pastMatches.round}`}</p>

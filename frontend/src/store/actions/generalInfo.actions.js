@@ -3,7 +3,7 @@ import {
   SET_GENERALINFO,
   SET_PLAYERINFO,
   SET_Player1_H2H,
-  SET_Player2_H2H,
+  SET_Player2_H2H
 } from "../reducers/fpl.reducer";
 import { fplService } from "../../services/fplService";
 import { getRank, getTeamInfo } from "../../services/utilService";

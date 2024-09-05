@@ -1,14 +1,3 @@
-// const Svgs = {
-//   modalCloseBtn: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" class="Dialog__CloseIcon-sc-5bogmv-3 ehxuGi" style="
-//     "><polygon fill-rule="evenodd" points="16 13.56 10.441 8 16 2.44 13.56 0 8.001 5.56 2.441 0 .001 2.44 5.561 8 0 13.56 2.44 16 8.001 10.44 13.56 16"></polygon></svg>`,
-// };
-
-// function getSvgs(iconName) {
-//   return Svgs[iconName];
-// }
-
-// export const svgService = { getSvgs };
-
 export const CheckIcon = () => {
   return (
     <svg

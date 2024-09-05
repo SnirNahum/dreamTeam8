@@ -12,7 +12,6 @@ function FutureMatchesList() {
   const [fixtureInfo, setfixtureInfo] = useState([]);
 
   useEffect(() => {
-    
     if (playerFixtures.length > 0 && teams.length > 0) {
       setfixtureInfo(playerFixtures.slice(0, 3));
       const playerTeamIds = playerFixtures
@@ -23,16 +22,13 @@ function FutureMatchesList() {
         teams.find((team: any) => team.id === teamId)
       );
       setPlayerTeams(updatedPlayerTeams);
-
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 700);
+      setIsLoading(false)
     }
   }, [playerFixtures, teams]);
 
   return (
     <section>
-      <h1>Next Fixtures</h1>
+      <h1>Next Matches</h1>
       <div className="future-match-card-container">
         {isLoading ? (
           <div className="skeleton-players-page">

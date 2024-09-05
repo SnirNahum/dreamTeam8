@@ -6,15 +6,14 @@ import { useEffect } from "react";
 import PlayerNews from "./PlayerNews";
 import FutureMatchesList from "./FutureMatchesList";
 import PastMatchesList from "./PastMatchesList";
+import { useParams } from "react-router-dom";
 
 export default function PlayerPreview({ player, getPlayer, currPlayer }: any) {
+  
   useEffect(() => {
     loadPlayer(player.id);
     updateH2HPlayer(player);
-    console.log(player);
-    
   }, [player.id]);
-
   async function loadPlayer(playerId: number) {
     await loadPlayerInfo(playerId);
   }
@@ -23,6 +22,7 @@ export default function PlayerPreview({ player, getPlayer, currPlayer }: any) {
       getPlayer(player, currPlayer);
     }
   }
+
   return !getPlayer ? (
     <section>
       <section className="player-preview">
@@ -36,7 +36,7 @@ export default function PlayerPreview({ player, getPlayer, currPlayer }: any) {
         <PlayerStats player={player} />
         <div className="player-preview-matches">
           <PastMatchesList player={player} />
-          <FutureMatchesList />
+          <FutureMatchesList player={player} />
         </div>
       </div>
     </section>

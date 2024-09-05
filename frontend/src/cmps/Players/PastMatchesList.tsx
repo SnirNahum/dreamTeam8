@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import PastMatchesPreview from "./PastMatchesPreview";
 
-export default function PastMatchesList() {
+export default function PastMatchesList() {  
   const playerHistory = useSelector((state) => state.fplModule.playerHistory);
   const teams = useSelector((state) => state.fplModule.teams);
   const [pastTeams, setPastTeams] = useState([]);
@@ -22,14 +22,12 @@ export default function PastMatchesList() {
       );
       setPastTeams(updatedPlayerTeams.slice(updatedPlayerTeams.length - 3));
     }
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1500);
+    setIsLoading(false);
   }, [playerHistory]);
 
   return (
     <section>
-      <h1>Previous Form</h1>
+      <h1>Last Matches</h1>
       <div className="future-match-card-container">
         {isLoading ? (
           <div className="skeleton-players-page">

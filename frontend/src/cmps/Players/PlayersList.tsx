@@ -14,6 +14,7 @@ import PlayersTableFilter from "./PlayersTableFilter";
 import PtsFilter from "./PtsFilter";
 import "../../assets/scss/mq/mobile.scss";
 import { useState } from "react";
+
 const columns = [
   {
     Header: "Name",
@@ -40,7 +41,8 @@ const columns = [
     accessor: "now_cost",
   },
 ];
-function PlayersList({ getPlayer, currPlayer, teamPlayers }) {
+
+function PlayersList({ getPlayer, currPlayer, teamPlayers }: any) {
 
   let players = useSelector((state: any) => state.fplModule.players);
   const [emptyFilter, setEmtpyFilter] = useState("");
@@ -49,7 +51,7 @@ function PlayersList({ getPlayer, currPlayer, teamPlayers }) {
     players = teamPlayers
   }
 
-  function handleChange(ev: any) {
+  function handleChange(ev: any) {    
     setGlobalFilter(ev.target.value);
     const filteredPlayers = players.filter((player) =>
       player.web_name.toLowerCase().includes(ev.target.value.toLowerCase())
@@ -82,6 +84,7 @@ function PlayersList({ getPlayer, currPlayer, teamPlayers }) {
   return (
     <div className="player-list">
       <PlayersTableFilter value={globalFilter} onChange={handleChange} />
+      
       {isPlayerListEmpty ? (
         <div className="skeleton-player-list">
           <Skeleton count={11} />
