@@ -20,7 +20,6 @@ export default function Head2Head() {
     savePlayersState();
     if (player1H2H) {
       setH2HPlayer1(player1H2H);
-      
     }
     if (player2H2H) {
       setH2HPlayer2(player2H2H);
@@ -32,7 +31,8 @@ export default function Head2Head() {
       setH2HPlayer1(player);
       inSearchMode(!searchMode);
       await setPlayer1(player);
-    } else if (currPlayer === 1) {
+    } 
+    else if (currPlayer === 1) {
       inSearchMode(!searchMode);
       await setPlayer2(player);
       setH2HPlayer2(player);
@@ -45,7 +45,6 @@ export default function Head2Head() {
   function ChangePlayer1() {
     inSearchMode(!searchMode);
     SetCurrPlayer(0);
-
   }
 
   function ChangePlayer2() {
@@ -68,23 +67,45 @@ export default function Head2Head() {
         </div>
       )}
       {h2hPlayer1 !== null &&
-        Object.keys(h2hPlayer1).length !== 0 &&
-        h2hPlayer2 !== null &&
-        Object.keys(h2hPlayer2).length !== 0 ? (
+      Object.keys(h2hPlayer1).length !== 0 &&
+      h2hPlayer2 !== null &&
+      Object.keys(h2hPlayer2).length !== 0 ? (
         <>
           {!searchMode && (
             <>
-              <CardStatsContainer h2hPlayer1={h2hPlayer1} h2hPlayer2={h2hPlayer2} title={'Overview'} />
-              <CardStatsContainer h2hPlayer1={h2hPlayer1} h2hPlayer2={h2hPlayer2} title={'Attacking'} />
-              <CardStatsContainer h2hPlayer1={h2hPlayer1} h2hPlayer2={h2hPlayer2} title={'Defending'} />
-              <CardStatsContainer h2hPlayer1={h2hPlayer1} h2hPlayer2={h2hPlayer2} title={'Goalkeeping'} />
-              <CardStatsContainer h2hPlayer1={h2hPlayer1} h2hPlayer2={h2hPlayer2} title={'Matches'} />
-              <CardStatsContainer h2hPlayer1={h2hPlayer1} h2hPlayer2={h2hPlayer2} title={'Stats'} />
+              <CardStatsContainer
+                h2hPlayer1={h2hPlayer1}
+                h2hPlayer2={h2hPlayer2}
+                title={"Overview"}
+              />
+              <CardStatsContainer
+                h2hPlayer1={h2hPlayer1}
+                h2hPlayer2={h2hPlayer2}
+                title={"Attacking"}
+              />
+              <CardStatsContainer
+                h2hPlayer1={h2hPlayer1}
+                h2hPlayer2={h2hPlayer2}
+                title={"Defending"}
+              />
+              <CardStatsContainer
+                h2hPlayer1={h2hPlayer1}
+                h2hPlayer2={h2hPlayer2}
+                title={"Goalkeeping"}
+              />
+              <CardStatsContainer
+                h2hPlayer1={h2hPlayer1}
+                h2hPlayer2={h2hPlayer2}
+                title={"Matches"}
+              />
+              <CardStatsContainer
+                h2hPlayer1={h2hPlayer1}
+                h2hPlayer2={h2hPlayer2}
+                title={"Stats"}
+              />
             </>
           )}
         </>
-
-
       ) : (
         <div></div>
       )}
